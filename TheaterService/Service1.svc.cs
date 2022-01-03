@@ -41,5 +41,10 @@ namespace TheaterService
 
             return movies;
         }
+
+        private void PrintHej()
+        {
+            Console.WriteLine("Hej");
+        }
     }
 }
