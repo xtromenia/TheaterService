@@ -41,3 +41,5 @@ C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterClient_\bin\Debug\ne
 C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterClient_\bin\Debug\net5.0\System.ServiceModel.Security.dll
 C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterClient_\obj\Debug\net5.0\Razor\Views\Movie\Index.cshtml.g.cs
 C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterClient_\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterClient_\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs
+C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterClient_\obj\Debug\net5.0\Razor\Views\User\Login.cshtml.g.cs

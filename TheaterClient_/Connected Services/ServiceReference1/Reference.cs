@@ -707,6 +707,18 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMovie", ReplyAction="http://tempuri.org/IService1/GetMovieResponse")]
         System.Threading.Tasks.Task<ServiceReference1.MovieData> GetMovieAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterCustomer", ReplyAction="http://tempuri.org/IService1/RegisterCustomerResponse")]
+        void RegisterCustomer(ServiceReference1.Customer newCustomer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterCustomer", ReplyAction="http://tempuri.org/IService1/RegisterCustomerResponse")]
+        System.Threading.Tasks.Task RegisterCustomerAsync(ServiceReference1.Customer newCustomer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoginCustomer", ReplyAction="http://tempuri.org/IService1/LoginCustomerResponse")]
+        bool LoginCustomer(ServiceReference1.Customer customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoginCustomer", ReplyAction="http://tempuri.org/IService1/LoginCustomerResponse")]
+        System.Threading.Tasks.Task<bool> LoginCustomerAsync(ServiceReference1.Customer customer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
@@ -777,6 +789,26 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.MovieData> GetMovieAsync(int id)
         {
             return base.Channel.GetMovieAsync(id);
+        }
+        
+        public void RegisterCustomer(ServiceReference1.Customer newCustomer)
+        {
+            base.Channel.RegisterCustomer(newCustomer);
+        }
+        
+        public System.Threading.Tasks.Task RegisterCustomerAsync(ServiceReference1.Customer newCustomer)
+        {
+            return base.Channel.RegisterCustomerAsync(newCustomer);
+        }
+        
+        public bool LoginCustomer(ServiceReference1.Customer customer)
+        {
+            return base.Channel.LoginCustomer(customer);
+        }
+        
+        public System.Threading.Tasks.Task<bool> LoginCustomerAsync(ServiceReference1.Customer customer)
+        {
+            return base.Channel.LoginCustomerAsync(customer);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

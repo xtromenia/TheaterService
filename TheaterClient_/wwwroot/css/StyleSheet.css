@@ -34,6 +34,7 @@ section#jumbo {
     padding-top: 25%;
     position: relative;
     background-image: linear-gradient(to top right, var(--coloraccentsecondary), var(--coloraccenttertiary));
+    background-position-y:center; /* temp */
     overflow: hidden;
 }
 
@@ -51,4 +52,11 @@ section#jumbo {
 .movie-banner {
     max-height: 100%;
     max-width: 100%;
+}
+
+
+/*Temporär CSS för Kenny */
+
+label, h1,h2, h3, p  {
+    color: white;
 }

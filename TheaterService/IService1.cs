@@ -17,6 +17,13 @@ namespace TheaterService
         
         [OperationContract]
         MovieData GetMovie(int id);
+
+        [OperationContract]
+        void RegisterCustomer(Customer newCustomer);
+       
+        [OperationContract]
+        bool LoginCustomer(Customer customer);
+
     }
 
     [ServiceContract]

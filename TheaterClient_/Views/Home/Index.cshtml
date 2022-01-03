@@ -2,30 +2,31 @@
 @{
     Layout = "_Layout";
 }
-    <section id="jumbo">
-        
-    </section>
 
-    <label for="genres">Genre:</label>
+@* Hämtar bilden på den senaste registrerade filmen och sätter som banner *@
+<section id="jumbo" style="background-image: url('@Html.DisplayFor(m => m.LastOrDefault().ImgPath)'" )>
+</section>
 
-    @* Skapar en drop-down-lista med alla genres som finns i filmlistan. *@
-    <select name="genres">
-        @* LINQ för att hitta alla modeller som har ett unikt genre-namn, alltså kommer inte action 2x. *@
-        @foreach (var genre in Model.Select(x=>x.Genre).Distinct())
-        {
-            <option value="@genre">@genre</option>
-        }
-    </select>
+<label for="genres">Genre:</label>
 
-    @*Skriver ut alla filmer som finns i databasen.*@
-    <section id="movielist">
-        @foreach (var movie in Model)
-        {
-            <div class="movie">
-                <a href="/Movie/Index?id=@movie.Id">
-                    <img src="@movie.ImgPath" alt="@movie.Title banner" class="movie-banner" />
-                </a>
-                <h3>@movie.Title</h3>
-            </div>
-        }
-    </section>
+@* Skapar en drop-down-lista med alla genres som finns i filmlistan. *@
+<select name="genres">
+    @* LINQ för att hitta alla modeller som har ett unikt genre-namn, alltså kommer inte action 2x. *@
+    @foreach (var genre in Model.Select(x => x.Genre).Distinct())
+    {
+        <option value="@genre">@genre</option>
+    }
+</select>
+
+@*Skriver ut alla filmer som finns i databasen.*@
+<section id="movielist">
+    @foreach (var movie in Model)
+    {
+        <div class="movie">
+            <a href="/Movie/Index?id=@movie.Id">
+                <img src="@movie.ImgPath" alt="@movie.Title banner" class="movie-banner" />
+            </a>
+            <h3>@movie.Title</h3>
+        </div>
+    }
+</section>

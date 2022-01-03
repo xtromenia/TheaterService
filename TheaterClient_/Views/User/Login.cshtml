@@ -1,0 +1,16 @@
+﻿@model ServiceReference1.Customer 
+@{
+    Layout = "_Layout";
+}
+
+<h1>@Html.ViewBag.Status</h1>
+
+@using (Html.BeginForm())
+{
+    <label>Email:</label>
+    @Html.EditorFor(m => m.Email);
+    <br>
+    <label>Password:</label>
+    @Html.PasswordFor(m => m.Password);
+    <input type="submit" value="Register" />
+}
