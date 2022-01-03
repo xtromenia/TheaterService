@@ -14,6 +14,9 @@ namespace TheaterService
     {
         [OperationContract]
         List<MovieData> GetMovies();
+        
+        [OperationContract]
+        MovieData GetMovie(int id);
     }
 
     [ServiceContract]

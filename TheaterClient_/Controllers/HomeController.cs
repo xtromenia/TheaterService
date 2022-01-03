@@ -12,7 +12,8 @@ namespace TheaterClient.Controllers
         public IActionResult Index()
         {
             Service1Client service = new Service1Client();
-            return View();
+            List<MovieData> movies = service.GetMovies().ToList();
+            return View(movies);
         }
     }
 }

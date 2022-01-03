@@ -1,22 +1,17 @@
-﻿<!DOCTYPE html>
+﻿@model List<ServiceReference1.MovieData>
 @{
-
+    Layout = "_Layout";
 }
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <title>Theater Client</title>
-    <link href="~/css/StyleSheet.css" rel="stylesheet" />
-</head>
-<body>
-    <header>
-
-    </header>
     <section id="jumbo">
-
     </section>
     <section id="movielist">
-
+        @foreach (var movie in Model)
+        {
+            <div class="movie">
+                <a href="/Movie/Index?id=@movie.Id">
+                    <img src="@movie.ImgPath" alt="@movie.Title banner" class="movie-banner" />
+                </a>
+                <h3>@movie.Title</h3>
+            </div>
+        }
     </section>
-</body>
-</html>
