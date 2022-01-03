@@ -6,26 +6,31 @@
         
     </section>
 
-    <label for="genres">Genre:</label>
-
-    @* Skapar en drop-down-lista med alla genres som finns i filmlistan. *@
-    <select name="genres">
-        @* LINQ för att hitta alla modeller som har ett unikt genre-namn, alltså kommer inte action 2x. *@
-        @foreach (var genre in Model.Select(x=>x.Genre).Distinct())
-        {
-            <option value="@genre">@genre</option>
-        }
-    </select>
-
     @*Skriver ut alla filmer som finns i databasen.*@
     <section id="movielist">
+        <nav>
+            @* Skapar en drop-down-lista med alla genres som finns i filmlistan. *@
+            <select name="genres">
+                <option value="all">All Genres</option>
+                @* LINQ för att hitta alla modeller som har ett unikt genre-namn, alltså kommer inte action 2x. *@
+                @foreach (var genre in Model.Select(x => x.Genre).Distinct())
+                {
+                    <option value="@genre">@genre</option>
+                }
+            </select>
+        </nav>
+
         @foreach (var movie in Model)
         {
-            <div class="movie">
+            <article class="movie">
                 <a href="/Movie/Index?id=@movie.Id">
-                    <img src="@movie.ImgPath" alt="@movie.Title banner" class="movie-banner" />
+                    <section class="bannercontainer">
+                        <img src="@movie.ImgPath" alt="@movie.Title banner" />
+                    </section>
+                    <section class="titlecontainer">
+                        <h3>@movie.Title</h3>
+                    </section>
                 </a>
-                <h3>@movie.Title</h3>
-            </div>
+            </article>
         }
     </section>

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\TheaterClient_.csproj": {}
+    "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterClient_\\TheaterClient_.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\TheaterClient_.csproj": {
+    "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterClient_\\TheaterClient_.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\TheaterClient_.csproj",
+        "projectUniqueName": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterClient_\\TheaterClient_.csproj",
         "projectName": "TheaterClient_",
-        "projectPath": "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\TheaterClient_.csproj",
-        "packagesPath": "C:\\Users\\xtrom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\obj\\",
+        "projectPath": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterClient_\\TheaterClient_.csproj",
+        "packagesPath": "C:\\Users\\josef\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterClient_\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\xtrom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -75,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
