@@ -26,6 +26,15 @@ namespace TheaterService
 
         [OperationContract]
         CustomerData GetCustomerData(Customer customer);
+
+        [OperationContract]
+        CustomerData GetCustomerDataById(int id);
+
+        [OperationContract]
+        void UpdateCustomerPass(CustomerData customer);
+
+        [OperationContract]
+        void UpdateCustomerMail(CustomerData customer);
     }
 
     [ServiceContract]

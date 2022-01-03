@@ -822,6 +822,24 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerData", ReplyAction="http://tempuri.org/IService1/GetCustomerDataResponse")]
         System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataAsync(ServiceReference1.Customer customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerDataById", ReplyAction="http://tempuri.org/IService1/GetCustomerDataByIdResponse")]
+        ServiceReference1.CustomerData GetCustomerDataById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerDataById", ReplyAction="http://tempuri.org/IService1/GetCustomerDataByIdResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerPass", ReplyAction="http://tempuri.org/IService1/UpdateCustomerPassResponse")]
+        void UpdateCustomerPass(ServiceReference1.CustomerData customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerPass", ReplyAction="http://tempuri.org/IService1/UpdateCustomerPassResponse")]
+        System.Threading.Tasks.Task UpdateCustomerPassAsync(ServiceReference1.CustomerData customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerMail", ReplyAction="http://tempuri.org/IService1/UpdateCustomerMailResponse")]
+        void UpdateCustomerMail(ServiceReference1.CustomerData customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerMail", ReplyAction="http://tempuri.org/IService1/UpdateCustomerMailResponse")]
+        System.Threading.Tasks.Task UpdateCustomerMailAsync(ServiceReference1.CustomerData customer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
@@ -922,6 +940,36 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataAsync(ServiceReference1.Customer customer)
         {
             return base.Channel.GetCustomerDataAsync(customer);
+        }
+        
+        public ServiceReference1.CustomerData GetCustomerDataById(int id)
+        {
+            return base.Channel.GetCustomerDataById(id);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataByIdAsync(int id)
+        {
+            return base.Channel.GetCustomerDataByIdAsync(id);
+        }
+        
+        public void UpdateCustomerPass(ServiceReference1.CustomerData customer)
+        {
+            base.Channel.UpdateCustomerPass(customer);
+        }
+        
+        public System.Threading.Tasks.Task UpdateCustomerPassAsync(ServiceReference1.CustomerData customer)
+        {
+            return base.Channel.UpdateCustomerPassAsync(customer);
+        }
+        
+        public void UpdateCustomerMail(ServiceReference1.CustomerData customer)
+        {
+            base.Channel.UpdateCustomerMail(customer);
+        }
+        
+        public System.Threading.Tasks.Task UpdateCustomerMailAsync(ServiceReference1.CustomerData customer)
+        {
+            return base.Channel.UpdateCustomerMailAsync(customer);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

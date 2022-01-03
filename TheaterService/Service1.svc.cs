@@ -78,6 +78,22 @@ namespace TheaterService
             }
         }
 
+        //publik metod som returnerar data kring en användare som nyligen loggat in, denna använder id.
+        public CustomerData GetCustomerDataById(int id)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Customer customerFromDb = db.Customer.Find(id);
+                CustomerData customerData = new CustomerData();
+                customerData.Id = customerFromDb.Id;
+                customerData.Email = customerFromDb.Email;
+                customerData.Name = customerFromDb.Name;
+                customerData.Booking = customerFromDb.Booking;
+                customerData.Password = customerFromDb.Password;
+                return customerData;
+            }
+        }
+
         //Logik som kontrollerar ifall det användare matat in i loginvy på front-end är korrekt, returnerar antingen true eller false.
         public bool LoginCustomer(Customer customer)
         {
@@ -102,6 +118,24 @@ namespace TheaterService
             }
         }
 
+        public void UpdateCustomerPass(CustomerData customer)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Customer custInDb = db.Customer.Find(customer.Id);
+                custInDb.Password = customer.Password;
+                db.SaveChanges();
+            }
+        }
 
+        public void UpdateCustomerMail(CustomerData customer)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Customer custInDb = db.Customer.Find(customer.Id);
+                custInDb.Email = customer.Email;
+                db.SaveChanges();
+            }
+        }
     }
 }
