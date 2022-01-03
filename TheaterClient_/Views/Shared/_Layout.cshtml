@@ -8,9 +8,16 @@
 <body>
     <header>
         @Html.ActionLink("Home", "Index", "Home")
-        @Html.ActionLink("Login", "Login", "User")
         @Html.ActionLink("Register", "Register", "User")
-        @ViewBag.Auth
+        @if (User.Identity.IsAuthenticated)
+        {
+            @Html.ActionLink("Logout", "Logout", "User")
+            @Html.ActionLink(User.Identity.Name, "Index", "User")
+        }
+        else
+        {
+            @Html.ActionLink("Login", "Login", "User")
+        }
     </header>
     <div>
         @RenderBody()

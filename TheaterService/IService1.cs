@@ -24,6 +24,8 @@ namespace TheaterService
         [OperationContract]
         bool LoginCustomer(Customer customer);
 
+        [OperationContract]
+        CustomerData GetCustomerData(Customer customer);
     }
 
     [ServiceContract]
@@ -50,5 +52,26 @@ namespace TheaterService
         [DataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Viewing> Viewing { get; set; }
+    }
+
+    [ServiceContract]
+    public class CustomerData
+    {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public void Customer()
+        {
+            Booking = new HashSet<Booking>();
+        }
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public string Name { get; set; }
+        [DataMember]
+        public string Email { get; set; }
+        [DataMember]
+        public string Password { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Booking> Booking { get; set; }
     }
 }

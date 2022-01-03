@@ -48,9 +48,10 @@ namespace TheaterClient_.Controllers
             //Ifall inloggning är korrekt skall cookies sätta med email och namn för att underlätta för kund i användning.
             if (service.LoginCustomer(customer))
             {
+                CustomerData customerData = service.GetCustomerData(customer);
                 var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
-                identity.AddClaim(new Claim(ClaimTypes.Email, customer.Email));
-                identity.AddClaim(new Claim(ClaimTypes.Name, customer.Name));
+                identity.AddClaim(new Claim(ClaimTypes.Email, customerData.Email));
+                identity.AddClaim(new Claim(ClaimTypes.Name, customerData.Name));
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
                 return RedirectToAction("Index", "Home");
             }else
@@ -58,6 +59,12 @@ namespace TheaterClient_.Controllers
                 ViewBag.Status = "Error, please try again.";
                 return View();
             }
+        }
+
+        public async Task<IActionResult> LogoutAsync()
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Login");
         }
     }
 }

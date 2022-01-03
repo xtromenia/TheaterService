@@ -706,6 +706,88 @@ namespace ServiceReference1
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class CustomerData : object
+    {
+        
+        private ServiceReference1.Booking[] BookingField;
+        
+        private string EmailField;
+        
+        private int IdField;
+        
+        private string NameField;
+        
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Booking[] Booking
+        {
+            get
+            {
+                return this.BookingField;
+            }
+            set
+            {
+                this.BookingField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email
+        {
+            get
+            {
+                return this.EmailField;
+            }
+            set
+            {
+                this.EmailField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password
+        {
+            get
+            {
+                return this.PasswordField;
+            }
+            set
+            {
+                this.PasswordField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1
@@ -734,6 +816,12 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoginCustomer", ReplyAction="http://tempuri.org/IService1/LoginCustomerResponse")]
         System.Threading.Tasks.Task<bool> LoginCustomerAsync(ServiceReference1.Customer customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerData", ReplyAction="http://tempuri.org/IService1/GetCustomerDataResponse")]
+        ServiceReference1.CustomerData GetCustomerData(ServiceReference1.Customer customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerData", ReplyAction="http://tempuri.org/IService1/GetCustomerDataResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataAsync(ServiceReference1.Customer customer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
@@ -824,6 +912,16 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<bool> LoginCustomerAsync(ServiceReference1.Customer customer)
         {
             return base.Channel.LoginCustomerAsync(customer);
+        }
+        
+        public ServiceReference1.CustomerData GetCustomerData(ServiceReference1.Customer customer)
+        {
+            return base.Channel.GetCustomerData(customer);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataAsync(ServiceReference1.Customer customer)
+        {
+            return base.Channel.GetCustomerDataAsync(customer);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

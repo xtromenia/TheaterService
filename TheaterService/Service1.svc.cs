@@ -46,7 +46,7 @@ namespace TheaterService
         }
 
         //Eftersom att vi inte vet om vilket id en kund har när de försöker logga in görs en LINQ-sökning för att hitta kund med epost.
-        public Customer GetCustomer(Customer customer)
+        private Customer GetCustomer(Customer customer)
         {
             using (DataModel db = new DataModel())
             {
@@ -56,6 +56,25 @@ namespace TheaterService
 
                 Customer custInDb = result.FirstOrDefault();
                 return custInDb;
+            }
+        }
+
+        //publik metod som returnerar data kring en användare som nyligen loggat in för att få tag på id och namn.
+        public CustomerData GetCustomerData(Customer customer)
+        {
+            CustomerData customerData = new CustomerData();
+            using (DataModel db = new DataModel())
+            {
+                var result = from cust in db.Customer
+                             where cust.Email.Equals(customer.Email)
+                             select cust;
+
+                Customer custFromDb = result.FirstOrDefault();
+                customerData.Id = custFromDb.Id;
+                customerData.Name = custFromDb.Name;
+                customerData.Email = custFromDb.Email;
+                customerData.Booking = custFromDb.Booking;
+                return customerData;
             }
         }
 
@@ -82,5 +101,7 @@ namespace TheaterService
                 db.SaveChanges();
             }
         }
+
+
     }
 }
