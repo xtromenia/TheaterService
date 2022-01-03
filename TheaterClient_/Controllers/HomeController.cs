@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ServiceReference1;
 
 namespace TheaterClient.Controllers
 {
@@ -10,6 +11,7 @@ namespace TheaterClient.Controllers
     {
         public IActionResult Index()
         {
+            Service1Client service = new Service1Client();
             return View();
         }
     }

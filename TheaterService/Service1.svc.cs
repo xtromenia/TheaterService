@@ -12,22 +12,27 @@ namespace TheaterService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public List<MovieData> GetMovies()
         {
-            return string.Format("You entered: {0}", value);
-        }
+            List<MovieData> movies = new List<MovieData>();
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
+            using (DataModel db = new DataModel())
             {
-                throw new ArgumentNullException("composite");
+                foreach (var movie in db.Movie.ToList())
+                {
+                    MovieData returnMovie = new MovieData();
+                    returnMovie.Id = movie.Id;
+                    returnMovie.Title = movie.Title;
+                    returnMovie.Runtime = movie.Runtime;
+                    returnMovie.Description = movie.Description;
+                    returnMovie.ImgPath = movie.ImgPath;
+                    returnMovie.Genre = movie.Genre;
+                    returnMovie.Viewing = movie.Viewing;
+                    movies.Add(returnMovie);
+                }
             }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+
+            return movies;
         }
     }
 }

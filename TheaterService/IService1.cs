@@ -12,36 +12,33 @@ namespace TheaterService
     [ServiceContract]
     public interface IService1
     {
-
         [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        // TODO: Add your service operations here
+        List<MovieData> GetMovies();
     }
 
-
-    // Use a data contract as illustrated in the sample below to add composite types to service operations.
-    [DataContract]
-    public class CompositeType
+    [ServiceContract]
+    public class MovieData
     {
-        bool boolValue = true;
-        string stringValue = "Hello ";
 
-        [DataMember]
-        public bool BoolValue
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public void Movie()
         {
-            get { return boolValue; }
-            set { boolValue = value; }
+            Viewing = new HashSet<Viewing>();
         }
-
         [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        public int Id { get; set; }
+        [DataMember]
+        public string Title { get; set; }
+        [DataMember]
+        public int Runtime { get; set; }
+        [DataMember]
+        public string Description { get; set; }
+        [DataMember]
+        public string ImgPath { get; set; }
+        [DataMember]
+        public string Genre { get; set; }
+        [DataMember]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Viewing> Viewing { get; set; }
     }
 }
