@@ -539,6 +539,8 @@ namespace ServiceReference1
         
         private int IdField;
         
+        private string NameField;
+        
         private string PasswordField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -577,6 +579,19 @@ namespace ServiceReference1
             set
             {
                 this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
             }
         }
         

@@ -46,8 +46,7 @@ namespace TheaterService
         }
 
         //Eftersom att vi inte vet om vilket id en kund har när de försöker logga in görs en LINQ-sökning för att hitta kund med epost.
-        //Private då den enbart behövs på back-end och inte front-end.
-        private Customer GetCustomer(Customer customer)
+        public Customer GetCustomer(Customer customer)
         {
             using (DataModel db = new DataModel())
             {

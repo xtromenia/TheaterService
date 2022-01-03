@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ServiceReference1;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 
 namespace TheaterClient_.Controllers
 {
@@ -40,10 +43,15 @@ namespace TheaterClient_.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(Customer customer)
+        public async Task<IActionResult> LoginAsync(Customer customer)
         {
+            //Ifall inloggning är korrekt skall cookies sätta med email och namn för att underlätta för kund i användning.
             if (service.LoginCustomer(customer))
             {
+                var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+                identity.AddClaim(new Claim(ClaimTypes.Email, customer.Email));
+                identity.AddClaim(new Claim(ClaimTypes.Name, customer.Name));
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
                 return RedirectToAction("Index", "Home");
             }else
             {

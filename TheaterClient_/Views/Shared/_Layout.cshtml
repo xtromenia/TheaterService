@@ -10,10 +10,14 @@
         @Html.ActionLink("Home", "Index", "Home")
         @Html.ActionLink("Login", "Login", "User")
         @Html.ActionLink("Register", "Register", "User")
+        @ViewBag.Auth
     </header>
     <div>
         @RenderBody()
     </div>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/script.js"></script>
 </body>
 </html>
 
