@@ -10,18 +10,18 @@ namespace TheaterClient.Controllers
 {
     public class HomeController : Controller
     {
+        Service1Client service = new Service1Client();
         public IActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                ViewBag.Auth = "Logged in";
-            }
-            else
-            {
-                ViewBag.Auth = "Not Logged in";
-            }
-            Service1Client service = new Service1Client();
             List<MovieData> movies = service.GetMovies().ToList();
+            return View(movies);
+        }
+
+        [HttpPost]
+        public IActionResult Index(string genre)
+        {
+            List<MovieData> movies = service.GetMovies().ToList();
+            ViewBag.Genre = genre;
             return View(movies);
         }
     }
