@@ -137,5 +137,60 @@ namespace TheaterService
                 db.SaveChanges();
             }
         }
+
+        //Admin
+        public void RegisterMovie(Movie newMovie)
+        {
+            using (DataModel db = new DataModel())
+            {
+                db.Movie.Add(newMovie);
+                db.SaveChanges();
+            }
+        }
+
+        public List<CustomerData> GetCustomers()
+        {
+            List<CustomerData> customers = new List<CustomerData>();
+            using (DataModel db = new DataModel())
+            {
+                foreach (var customerInDb in db.Customer)
+                {
+                    CustomerData customer = new CustomerData();
+                    customer.Id = customerInDb.Id;
+                    customer.Name = customerInDb.Name;
+                    customer.Email = customerInDb.Email;
+                    customer.Booking = customerInDb.Booking;
+                    customers.Add(customer);
+                }
+
+                return customers;
+            }
+        }
+
+        public List<TheaterData> GetTheaters()
+        {
+            using (DataModel db = new DataModel())
+            {
+                List<TheaterData> theaters = new List<TheaterData>();
+                foreach (var theater in db.Theater)
+                {
+                    TheaterData theaterData = new TheaterData();
+                    theaterData.Id = theater.Id;
+                    theaterData.Name = theater.Name;
+                    theaterData.Seat = theater.Seat;
+                    theaters.Add(theaterData);
+                }
+                return theaters;
+            }
+        }
+
+        public void RegisterViewing(Viewing newViewing)
+        {
+            using (DataModel db = new DataModel())
+            {
+                db.Viewing.Add(newViewing);
+                db.SaveChanges();
+            }
+        }
     }
 }

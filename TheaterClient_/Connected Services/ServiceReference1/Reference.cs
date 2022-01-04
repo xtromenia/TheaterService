@@ -788,6 +788,73 @@ namespace ServiceReference1
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TheaterData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class TheaterData : object
+    {
+        
+        private int IdField;
+        
+        private string NameField;
+        
+        private ServiceReference1.Seat[] SeatField;
+        
+        private ServiceReference1.Viewing[] ViewingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Seat[] Seat
+        {
+            get
+            {
+                return this.SeatField;
+            }
+            set
+            {
+                this.SeatField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Viewing[] Viewing
+        {
+            get
+            {
+                return this.ViewingField;
+            }
+            set
+            {
+                this.ViewingField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1
@@ -840,6 +907,24 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerMail", ReplyAction="http://tempuri.org/IService1/UpdateCustomerMailResponse")]
         System.Threading.Tasks.Task UpdateCustomerMailAsync(ServiceReference1.CustomerData customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMovie", ReplyAction="http://tempuri.org/IService1/RegisterMovieResponse")]
+        void RegisterMovie(ServiceReference1.Movie newMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMovie", ReplyAction="http://tempuri.org/IService1/RegisterMovieResponse")]
+        System.Threading.Tasks.Task RegisterMovieAsync(ServiceReference1.Movie newMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomers", ReplyAction="http://tempuri.org/IService1/GetCustomersResponse")]
+        ServiceReference1.CustomerData[] GetCustomers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomers", ReplyAction="http://tempuri.org/IService1/GetCustomersResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.CustomerData[]> GetCustomersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTheaters", ReplyAction="http://tempuri.org/IService1/GetTheatersResponse")]
+        ServiceReference1.TheaterData[] GetTheaters();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTheaters", ReplyAction="http://tempuri.org/IService1/GetTheatersResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.TheaterData[]> GetTheatersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
@@ -970,6 +1055,36 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task UpdateCustomerMailAsync(ServiceReference1.CustomerData customer)
         {
             return base.Channel.UpdateCustomerMailAsync(customer);
+        }
+        
+        public void RegisterMovie(ServiceReference1.Movie newMovie)
+        {
+            base.Channel.RegisterMovie(newMovie);
+        }
+        
+        public System.Threading.Tasks.Task RegisterMovieAsync(ServiceReference1.Movie newMovie)
+        {
+            return base.Channel.RegisterMovieAsync(newMovie);
+        }
+        
+        public ServiceReference1.CustomerData[] GetCustomers()
+        {
+            return base.Channel.GetCustomers();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CustomerData[]> GetCustomersAsync()
+        {
+            return base.Channel.GetCustomersAsync();
+        }
+        
+        public ServiceReference1.TheaterData[] GetTheaters()
+        {
+            return base.Channel.GetTheaters();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.TheaterData[]> GetTheatersAsync()
+        {
+            return base.Channel.GetTheatersAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()
