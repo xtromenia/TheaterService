@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\TheaterClient_.csproj": {}
+    "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterClient_\\TheaterClient_.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\TheaterClient_.csproj": {
+    "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterClient_\\TheaterClient_.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\TheaterClient_.csproj",
+        "projectUniqueName": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterClient_\\TheaterClient_.csproj",
         "projectName": "TheaterClient_",
-        "projectPath": "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\TheaterClient_.csproj",
+        "projectPath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterClient_\\TheaterClient_.csproj",
         "packagesPath": "C:\\Users\\xtrom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xtrom\\source\\repos\\xtromenia\\TheaterService\\TheaterClient_\\obj\\",
+        "outputPath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterClient_\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\xtrom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
             "System.ServiceModel.Duplex": {
               "target": "Package",
               "version": "[4.8.*, )"

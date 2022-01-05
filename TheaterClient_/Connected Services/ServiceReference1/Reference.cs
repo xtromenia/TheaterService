@@ -539,6 +539,8 @@ namespace ServiceReference1
         
         private int IdField;
         
+        private string NameField;
+        
         private string PasswordField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -577,6 +579,19 @@ namespace ServiceReference1
             set
             {
                 this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
             }
         }
         
@@ -691,6 +706,155 @@ namespace ServiceReference1
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CustomerData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class CustomerData : object
+    {
+        
+        private ServiceReference1.Booking[] BookingField;
+        
+        private string EmailField;
+        
+        private int IdField;
+        
+        private string NameField;
+        
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Booking[] Booking
+        {
+            get
+            {
+                return this.BookingField;
+            }
+            set
+            {
+                this.BookingField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email
+        {
+            get
+            {
+                return this.EmailField;
+            }
+            set
+            {
+                this.EmailField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password
+        {
+            get
+            {
+                return this.PasswordField;
+            }
+            set
+            {
+                this.PasswordField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TheaterData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class TheaterData : object
+    {
+        
+        private int IdField;
+        
+        private string NameField;
+        
+        private ServiceReference1.Seat[] SeatField;
+        
+        private ServiceReference1.Viewing[] ViewingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Seat[] Seat
+        {
+            get
+            {
+                return this.SeatField;
+            }
+            set
+            {
+                this.SeatField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Viewing[] Viewing
+        {
+            get
+            {
+                return this.ViewingField;
+            }
+            set
+            {
+                this.ViewingField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1
@@ -707,6 +871,60 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMovie", ReplyAction="http://tempuri.org/IService1/GetMovieResponse")]
         System.Threading.Tasks.Task<ServiceReference1.MovieData> GetMovieAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterCustomer", ReplyAction="http://tempuri.org/IService1/RegisterCustomerResponse")]
+        void RegisterCustomer(ServiceReference1.Customer newCustomer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterCustomer", ReplyAction="http://tempuri.org/IService1/RegisterCustomerResponse")]
+        System.Threading.Tasks.Task RegisterCustomerAsync(ServiceReference1.Customer newCustomer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoginCustomer", ReplyAction="http://tempuri.org/IService1/LoginCustomerResponse")]
+        bool LoginCustomer(ServiceReference1.Customer customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoginCustomer", ReplyAction="http://tempuri.org/IService1/LoginCustomerResponse")]
+        System.Threading.Tasks.Task<bool> LoginCustomerAsync(ServiceReference1.Customer customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerData", ReplyAction="http://tempuri.org/IService1/GetCustomerDataResponse")]
+        ServiceReference1.CustomerData GetCustomerData(ServiceReference1.Customer customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerData", ReplyAction="http://tempuri.org/IService1/GetCustomerDataResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataAsync(ServiceReference1.Customer customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerDataById", ReplyAction="http://tempuri.org/IService1/GetCustomerDataByIdResponse")]
+        ServiceReference1.CustomerData GetCustomerDataById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomerDataById", ReplyAction="http://tempuri.org/IService1/GetCustomerDataByIdResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerPass", ReplyAction="http://tempuri.org/IService1/UpdateCustomerPassResponse")]
+        void UpdateCustomerPass(ServiceReference1.CustomerData customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerPass", ReplyAction="http://tempuri.org/IService1/UpdateCustomerPassResponse")]
+        System.Threading.Tasks.Task UpdateCustomerPassAsync(ServiceReference1.CustomerData customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerMail", ReplyAction="http://tempuri.org/IService1/UpdateCustomerMailResponse")]
+        void UpdateCustomerMail(ServiceReference1.CustomerData customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerMail", ReplyAction="http://tempuri.org/IService1/UpdateCustomerMailResponse")]
+        System.Threading.Tasks.Task UpdateCustomerMailAsync(ServiceReference1.CustomerData customer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMovie", ReplyAction="http://tempuri.org/IService1/RegisterMovieResponse")]
+        void RegisterMovie(ServiceReference1.Movie newMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMovie", ReplyAction="http://tempuri.org/IService1/RegisterMovieResponse")]
+        System.Threading.Tasks.Task RegisterMovieAsync(ServiceReference1.Movie newMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomers", ReplyAction="http://tempuri.org/IService1/GetCustomersResponse")]
+        ServiceReference1.CustomerData[] GetCustomers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomers", ReplyAction="http://tempuri.org/IService1/GetCustomersResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.CustomerData[]> GetCustomersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTheaters", ReplyAction="http://tempuri.org/IService1/GetTheatersResponse")]
+        ServiceReference1.TheaterData[] GetTheaters();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTheaters", ReplyAction="http://tempuri.org/IService1/GetTheatersResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.TheaterData[]> GetTheatersAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
@@ -777,6 +995,96 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<ServiceReference1.MovieData> GetMovieAsync(int id)
         {
             return base.Channel.GetMovieAsync(id);
+        }
+        
+        public void RegisterCustomer(ServiceReference1.Customer newCustomer)
+        {
+            base.Channel.RegisterCustomer(newCustomer);
+        }
+        
+        public System.Threading.Tasks.Task RegisterCustomerAsync(ServiceReference1.Customer newCustomer)
+        {
+            return base.Channel.RegisterCustomerAsync(newCustomer);
+        }
+        
+        public bool LoginCustomer(ServiceReference1.Customer customer)
+        {
+            return base.Channel.LoginCustomer(customer);
+        }
+        
+        public System.Threading.Tasks.Task<bool> LoginCustomerAsync(ServiceReference1.Customer customer)
+        {
+            return base.Channel.LoginCustomerAsync(customer);
+        }
+        
+        public ServiceReference1.CustomerData GetCustomerData(ServiceReference1.Customer customer)
+        {
+            return base.Channel.GetCustomerData(customer);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataAsync(ServiceReference1.Customer customer)
+        {
+            return base.Channel.GetCustomerDataAsync(customer);
+        }
+        
+        public ServiceReference1.CustomerData GetCustomerDataById(int id)
+        {
+            return base.Channel.GetCustomerDataById(id);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CustomerData> GetCustomerDataByIdAsync(int id)
+        {
+            return base.Channel.GetCustomerDataByIdAsync(id);
+        }
+        
+        public void UpdateCustomerPass(ServiceReference1.CustomerData customer)
+        {
+            base.Channel.UpdateCustomerPass(customer);
+        }
+        
+        public System.Threading.Tasks.Task UpdateCustomerPassAsync(ServiceReference1.CustomerData customer)
+        {
+            return base.Channel.UpdateCustomerPassAsync(customer);
+        }
+        
+        public void UpdateCustomerMail(ServiceReference1.CustomerData customer)
+        {
+            base.Channel.UpdateCustomerMail(customer);
+        }
+        
+        public System.Threading.Tasks.Task UpdateCustomerMailAsync(ServiceReference1.CustomerData customer)
+        {
+            return base.Channel.UpdateCustomerMailAsync(customer);
+        }
+        
+        public void RegisterMovie(ServiceReference1.Movie newMovie)
+        {
+            base.Channel.RegisterMovie(newMovie);
+        }
+        
+        public System.Threading.Tasks.Task RegisterMovieAsync(ServiceReference1.Movie newMovie)
+        {
+            return base.Channel.RegisterMovieAsync(newMovie);
+        }
+        
+        public ServiceReference1.CustomerData[] GetCustomers()
+        {
+            return base.Channel.GetCustomers();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.CustomerData[]> GetCustomersAsync()
+        {
+            return base.Channel.GetCustomersAsync();
+        }
+        
+        public ServiceReference1.TheaterData[] GetTheaters()
+        {
+            return base.Channel.GetTheaters();
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.TheaterData[]> GetTheatersAsync()
+        {
+            return base.Channel.GetTheatersAsync();
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

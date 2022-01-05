@@ -1,0 +1,25 @@
+﻿@model List<ServiceReference1.CustomerData>
+@{
+    ViewData["Title"] = "ListCustomers";
+}
+
+<h1>All Customers</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Name</th>
+    </tr>
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>@customer.Id</td>
+            <td>@customer.Email</td>
+            <td>@customer.Name</td>
+            <td>@Html.ActionLink("Edit", "ListCustomers")</td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Back", "Index")

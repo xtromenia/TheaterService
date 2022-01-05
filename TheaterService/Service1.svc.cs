@@ -12,6 +12,8 @@ namespace TheaterService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+
+        //Hämtar en specifik film med hjälp av id för att visa upp i filmvyn på front-end.
         public MovieData GetMovie(int id)
         {
             List<MovieData> movies = GetMovies();
@@ -19,6 +21,7 @@ namespace TheaterService
             return movie;
         }
 
+        //Funktion som hämtar alla registrerade filmer i databasen och skickar över till front-end i form av MovieData objekt.
         public List<MovieData> GetMovies()
         {
             List<MovieData> movies = new List<MovieData>();
@@ -42,9 +45,152 @@ namespace TheaterService
             return movies;
         }
 
-        private void PrintHej()
+        //Eftersom att vi inte vet om vilket id en kund har när de försöker logga in görs en LINQ-sökning för att hitta kund med epost.
+        private Customer GetCustomer(Customer customer)
         {
-            Console.WriteLine("Hej");
+            using (DataModel db = new DataModel())
+            {
+                var result = from cust in db.Customer
+                             where cust.Email.Equals(customer.Email)
+                             select cust;
+
+                Customer custInDb = result.FirstOrDefault();
+                return custInDb;
+            }
+        }
+
+        //publik metod som returnerar data kring en användare som nyligen loggat in för att få tag på id och namn.
+        public CustomerData GetCustomerData(Customer customer)
+        {
+            CustomerData customerData = new CustomerData();
+            using (DataModel db = new DataModel())
+            {
+                var result = from cust in db.Customer
+                             where cust.Email.Equals(customer.Email)
+                             select cust;
+
+                Customer custFromDb = result.FirstOrDefault();
+                customerData.Id = custFromDb.Id;
+                customerData.Name = custFromDb.Name;
+                customerData.Email = custFromDb.Email;
+                customerData.Booking = custFromDb.Booking;
+                return customerData;
+            }
+        }
+
+        //publik metod som returnerar data kring en användare som nyligen loggat in, denna använder id.
+        public CustomerData GetCustomerDataById(int id)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Customer customerFromDb = db.Customer.Find(id);
+                CustomerData customerData = new CustomerData();
+                customerData.Id = customerFromDb.Id;
+                customerData.Email = customerFromDb.Email;
+                customerData.Name = customerFromDb.Name;
+                customerData.Booking = customerFromDb.Booking;
+                customerData.Password = customerFromDb.Password;
+                return customerData;
+            }
+        }
+
+        //Logik som kontrollerar ifall det användare matat in i loginvy på front-end är korrekt, returnerar antingen true eller false.
+        public bool LoginCustomer(Customer customer)
+        {
+            Customer custInDb = GetCustomer(customer);
+
+                if (custInDb.Email.Equals(customer.Email) && 
+                    custInDb.Password.Equals(customer.Password))
+                {
+                    return true;
+                }
+                else
+                    return false;   
+        }
+
+        //Tar emot ett nyskapat objekt från registreringsvyn på front-end och registrerar i databastabell.
+        public void RegisterCustomer(Customer newCustomer)
+        {
+            using (DataModel db = new DataModel())
+            {
+                db.Customer.Add(newCustomer);
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateCustomerPass(CustomerData customer)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Customer custInDb = db.Customer.Find(customer.Id);
+                custInDb.Password = customer.Password;
+                db.SaveChanges();
+            }
+        }
+
+        public void UpdateCustomerMail(CustomerData customer)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Customer custInDb = db.Customer.Find(customer.Id);
+                custInDb.Email = customer.Email;
+                db.SaveChanges();
+            }
+        }
+
+        //Admin
+        public void RegisterMovie(Movie newMovie)
+        {
+            using (DataModel db = new DataModel())
+            {
+                db.Movie.Add(newMovie);
+                db.SaveChanges();
+            }
+        }
+
+        public List<CustomerData> GetCustomers()
+        {
+            List<CustomerData> customers = new List<CustomerData>();
+            using (DataModel db = new DataModel())
+            {
+                foreach (var customerInDb in db.Customer)
+                {
+                    CustomerData customer = new CustomerData();
+                    customer.Id = customerInDb.Id;
+                    customer.Name = customerInDb.Name;
+                    customer.Email = customerInDb.Email;
+                    customer.Booking = customerInDb.Booking;
+                    customers.Add(customer);
+                }
+
+                return customers;
+            }
+        }
+
+        public List<TheaterData> GetTheaters()
+        {
+            using (DataModel db = new DataModel())
+            {
+                List<TheaterData> theaters = new List<TheaterData>();
+                foreach (var theater in db.Theater)
+                {
+                    TheaterData theaterData = new TheaterData();
+                    theaterData.Id = theater.Id;
+                    theaterData.Name = theater.Name;
+                    theaterData.Seat = theater.Seat;
+                    theaters.Add(theaterData);
+                }
+                return theaters;
+            }
+        }
+
+        public void RegisterViewing(Viewing newViewing)
+        {
+            using (DataModel db = new DataModel())
+            {
+                db.Viewing.Add(newViewing);
+                db.SaveChanges();
+            }
         }
     }
 }
