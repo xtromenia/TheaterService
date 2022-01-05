@@ -39,17 +39,10 @@ section#jumbo {
 }
 
 #movielist {
-    /*display: flex; /*Möjligtvis använda grid istället.*/
-    width: 1440px;
+    width: 100%;
+    max-width: 1920px;
     margin: 40px auto 60px;
-    max-width: 100%;
-    padding: 0 28.33px;
-}
-
-@media only screen and (min-width: 1920px) {
-    #movielist {
-        width: 1920px;
-    }
+    padding: 0 30px;
 }
 
 #movielist::after {
@@ -79,17 +72,38 @@ section#jumbo {
 #movielist select option {
     background-color: var(--colorfg);
     font-size: 20px;
-    font-weight: bold
+    font-weight: bold;
     padding: 10px 15px;
     color: white;
 }
 
 .movie {
-    width: calc((100% - 340px + (28.33px * 2)) / 5); /* 220px at 1440px parent width (15.277%). 28.33px * 2 is accounting for parent padding */
+    width: calc((100% - 360px + (30px * 2)) / 5); /* 220px at 1440px parent width (15.277%). 28.33px * 2 is accounting for parent padding */
     border-radius: 8px;
     float: left;
-    margin: 40px 28.33px; /* 40px 28.33px; */
+    margin: 40px 30px; /* 40px 28.33px; */
     transition: background-color .5s, transform .5s, box-shadow .5s;
+}
+
+@media only screen and (max-width: 600px) {
+    #movielist {
+        margin: 20px auto 40px;
+        padding: 0 20px;
+    }
+
+    #movielist nav {
+        padding: 0;
+    }
+
+    #movielist select {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .movie {
+        width: 100%;
+        margin: 20px auto;
+    }
 }
 
 .movie:hover, .movie:focus, .movie:focus-within {
@@ -138,6 +152,6 @@ section#jumbo {
     font-weight: bold;
     color: white;
     margin: 0;
-    padding: 0 15px;
+    padding: 0 12.5px;
     text-align: center;
 }
