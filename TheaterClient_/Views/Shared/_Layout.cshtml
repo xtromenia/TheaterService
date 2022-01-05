@@ -8,7 +8,6 @@
 <body>
     <header>
         @Html.ActionLink("Home", "Index", "Home")
-        @Html.ActionLink("Register", "Register", "Authentication")
         @if (User.Identity.IsAuthenticated)
         {
             @Html.ActionLink("Logout", "Logout", "Authentication")
@@ -16,12 +15,16 @@
         }
         else
         {
+            @Html.ActionLink("Register", "Register", "Authentication")
             @Html.ActionLink("Login", "Login", "Authentication")
         }
     </header>
-    <div>
-        @RenderBody()
-    </div>
+    
+    @RenderBody()
+    
+    <footer>
+        © 2022 🎦
+    </footer>
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/script.js"></script>

@@ -6,48 +6,58 @@
 @* Hämtar bilden på den senaste registrerade filmen och sätter som banner *@
 <section id="jumbo" style="background-image: url('@Html.DisplayFor(m => m.LastOrDefault().ImgPath)'" )>
 </section>
-
-@using (Html.BeginForm())
-{
-    <label for="genre">Genre:</label>
-    @* Skapar en drop-down-lista med alla genres som finns i filmlistan. *@
-    <select name="genre" id="genre-list">
-        @* LINQ för att hitta alla modeller som har ett unikt genre-namn, alltså kommer inte action 2x. *@
-        @foreach (var genre in Model.Select(x => x.Genre).Distinct())
-        {
-            <option value="@genre">@genre</option>
-        }
-    </select>
-    <input type="submit" value="Append"/>
-    <h1>@ViewBag.Genre</h1>
-}
-
-
-@*Skriver ut alla filmer som finns i databasen.*@
 <section id="movielist">
+    <nav>
+        @using (Html.BeginForm(FormMethod.Get))
+        {
+            @* Skapar en drop-down-lista med alla genres som finns i filmlistan. *@
+            <select name="genre" id="genre-list">
+                <option value="all">All Genres</option>
+                @* LINQ för att hitta alla modeller som har ett unikt genre-namn, alltså kommer inte action 2x. *@
+                @foreach (var genre in Model.Select(x => x.Genre).Distinct())
+                {
+                    <option value="@genre">@genre</option>
+                }
+            </select>
+            <input type="submit" value="Append" />
+            <h1>@ViewBag.Genre</h1>
+        }
+    </nav>
+
+    @*Skriver ut alla filmer som finns i databasen.*@
+
+
     @foreach (var movie in Model)
     {
         if (ViewBag.Genre != null)
         {
             if (movie.Genre.Equals(ViewBag.Genre))
             {
-                <div class="movie">
+                <article class="movie">
                     <a href="/Movie/Index?id=@movie.Id">
-                        <img src="@movie.ImgPath" alt="@movie.Title banner" class="movie-banner" />
+                        <section class="bannercontainer">
+                            <img src="@movie.ImgPath" alt="@movie.Title banner" class="movie-banner" />
+                        </section>
+                        <section class="titlecontainer">
+                            <h3>@movie.Title</h3>
+                        </section>
                     </a>
-                    <h3>@movie.Title</h3>
-                </div>
+                </article>
             }
         }
 
         else
         {
-            <div class="movie">
+            <article class="movie">
                 <a href="/Movie/Index?id=@movie.Id">
-                    <img src="@movie.ImgPath" alt="@movie.Title banner" class="movie-banner" />
+                    <section class="bannercontainer">
+                        <img src="@movie.ImgPath" alt="@movie.Title banner" class="movie-banner" />
+                    </section>
+                    <section class="titlecontainer">
+                        <h3>@movie.Title</h3>
+                    </section>
                 </a>
-                <h3>@movie.Title</h3>
-            </div>
+            </article>
         }
     }
 </section>

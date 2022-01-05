@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1aIWgzQ7qGAdc6ty7s1TY/OheI5ogkwJjoY+2Xl1xUcFro3A2haoaB8a9GcbwBzbbC5ubx50/xF4TDhWl13h5g==",
+  "dgSpecHash": "ia/a5bPSpjXJGg3xYYMEssKZa0nRZno0ifhzWStUVoAaKTKo2AYxQiqel8ZedhrZD9betLwhlQenAz3CG5CTEg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterClient_\\TheaterClient_.csproj",
+  "projectFilePath": "C:\\Users\\xtrom\\source\\repos\\TheaterService\\TheaterClient_\\TheaterClient_.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\xtrom\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\xtrom\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

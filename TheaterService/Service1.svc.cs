@@ -37,7 +37,7 @@ namespace TheaterService
                     returnMovie.Description = movie.Description;
                     returnMovie.ImgPath = movie.ImgPath;
                     returnMovie.Genre = movie.Genre;
-                    returnMovie.Viewing = movie.Viewing;
+                    //returnMovie.Viewing = movie.Viewing;
                     movies.Add(returnMovie);
                 }
             }
@@ -118,6 +118,7 @@ namespace TheaterService
             }
         }
 
+        //Functions for updating customer information.
         public void UpdateCustomerPass(CustomerData customer)
         {
             using (DataModel db = new DataModel())
@@ -127,7 +128,7 @@ namespace TheaterService
                 db.SaveChanges();
             }
         }
-
+        //Functions for updating customer information.
         public void UpdateCustomerMail(CustomerData customer)
         {
             using (DataModel db = new DataModel())
@@ -138,7 +139,7 @@ namespace TheaterService
             }
         }
 
-        //Admin
+        //----------------------Admin------------------//
         public void RegisterMovie(Movie newMovie)
         {
             using (DataModel db = new DataModel())

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj": {}
+    "C:\\Users\\xtrom\\source\\repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj": {
+    "C:\\Users\\xtrom\\source\\repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
+        "projectUniqueName": "C:\\Users\\xtrom\\source\\repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
         "projectName": "TheaterAdmin",
-        "projectPath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
+        "projectPath": "C:\\Users\\xtrom\\source\\repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
         "packagesPath": "C:\\Users\\xtrom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterAdmin\\obj\\",
+        "outputPath": "C:\\Users\\xtrom\\source\\repos\\TheaterService\\TheaterAdmin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\xtrom\\AppData\\Roaming\\NuGet\\NuGet.Config",

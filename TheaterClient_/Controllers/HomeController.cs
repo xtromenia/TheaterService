@@ -17,7 +17,7 @@ namespace TheaterClient.Controllers
             return View(movies);
         }
 
-        [HttpPost]
+        [HttpGet]
         public IActionResult Index(string genre)
         {
             List<MovieData> movies = service.GetMovies().ToList();
