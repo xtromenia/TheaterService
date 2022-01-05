@@ -1,0 +1,175 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+:root {
+    --colorbg: #131313;
+    --colorfg: #2F2F2F;
+    --colortext: white;
+    --coloraccent: #8E2525;
+    --coloraccentsecondary: #582121;
+    --coloraccenttertiary: #A52333;
+}
+
+body {
+    margin: 0;
+    padding-top: 60px;
+    background-color: var(--colorbg);
+    font-family: sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--coloraccent);
+    z-index: 10;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+
+
+section#jumbo {
+    width: 100%;
+    padding-top: 25%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+/*    background-image: linear-gradient(to top right, var(--coloraccentsecondary), var(--coloraccenttertiary));
+*/    overflow: hidden;
+}
+
+#movielist {
+    width: 100%;
+    max-width: 1920px;
+    margin: 40px auto 40px;
+    padding: 0 30px;
+}
+
+#movielist::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#movielist nav {
+    width: 100%;
+    overflow: auto;
+    padding: 0 28.33px;
+}
+
+#movielist select {
+    min-width: 300px;
+    padding: 10px 15px;
+    background-color: var(--colorfg);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    float: left;
+}
+
+#movielist select option {
+    background-color: var(--colorfg);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
+    color: white;
+}
+
+.movie {
+    width: calc((100% - 360px + (30px * 2)) / 5); /* 220px at 1440px parent width (15.277%). 28.33px * 2 is accounting for parent padding */
+    border-radius: 8px;
+    float: left;
+    margin: 40px 30px;
+    transition: background-color .5s, transform .5s, box-shadow .5s;
+}
+
+@media only screen and (max-width: 800px) {
+    #movielist {
+        margin: 20px auto 40px;
+        padding: 0 20px;
+    }
+
+    #movielist nav {
+        padding: 0;
+    }
+
+    #movielist select {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .movie {
+        width: 100%;
+        margin: 20px auto;
+    }
+}
+
+.movie:hover, .movie:focus, .movie:focus-within {
+    background-color: var(--colorfg);
+    transform: scale(1.05) translateY(-2.5%);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+}
+
+.movie .bannercontainer {
+    width: 100%;
+    padding-top: 140.9%; /* 310px height / 220px width = 1.409 approx */
+    border-radius: 8px;
+    background: linear-gradient(to top right, var(--coloraccentsecondary), var(--coloraccenttertiary));
+    position: relative;
+    overflow: hidden;
+    transition: border-radius .5s;
+}
+
+.movie .bannercontainer img::before {
+    color: transparent;
+}
+
+.movie:hover .bannercontainer, .movie:focus .bannercontainer, .movie:focus-within .bannercontainer {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.movie .bannercontainer img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie .titlecontainer {
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+
+.movie .titlecontainer h3 {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: normal;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0 12.5px;
+    text-align: center;
+}
