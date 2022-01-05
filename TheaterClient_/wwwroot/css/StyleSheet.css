@@ -30,6 +30,18 @@ header {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+footer {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+
+
 section#jumbo {
     width: 100%;
     padding-top: 25%;
@@ -41,7 +53,7 @@ section#jumbo {
 #movielist {
     width: 100%;
     max-width: 1920px;
-    margin: 40px auto 60px;
+    margin: 40px auto 40px;
     padding: 0 30px;
 }
 
@@ -81,11 +93,11 @@ section#jumbo {
     width: calc((100% - 360px + (30px * 2)) / 5); /* 220px at 1440px parent width (15.277%). 28.33px * 2 is accounting for parent padding */
     border-radius: 8px;
     float: left;
-    margin: 40px 30px; /* 40px 28.33px; */
+    margin: 40px 30px;
     transition: background-color .5s, transform .5s, box-shadow .5s;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     #movielist {
         margin: 20px auto 40px;
         padding: 0 20px;
@@ -116,10 +128,14 @@ section#jumbo {
     width: 100%;
     padding-top: 140.9%; /* 310px height / 220px width = 1.409 approx */
     border-radius: 8px;
-    background: linear-gradient(to top right, var(--coloraccentsecondary), #582121 100%);
+    background: linear-gradient(to top right, var(--coloraccentsecondary), var(--coloraccenttertiary));
     position: relative;
     overflow: hidden;
     transition: border-radius .5s;
+}
+
+.movie .bannercontainer img::before {
+    color: transparent;
 }
 
 .movie:hover .bannercontainer, .movie:focus .bannercontainer, .movie:focus-within .bannercontainer {
