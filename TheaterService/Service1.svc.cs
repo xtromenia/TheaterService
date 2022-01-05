@@ -37,7 +37,7 @@ namespace TheaterService
                     returnMovie.Description = movie.Description;
                     returnMovie.ImgPath = movie.ImgPath;
                     returnMovie.Genre = movie.Genre;
-                    returnMovie.Viewing = movie.Viewing;
+                    //returnMovie.Viewing = movie.Viewing;
                     movies.Add(returnMovie);
                 }
             }
