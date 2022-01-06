@@ -3,19 +3,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Login</h1>
+<div id="container-login">
+    <h1>Admin Login</h1>
 
-@using (Html.BeginForm())
-{
+    @using  (Html.BeginForm(FormMethod.Post, new { @id = "login-form" })) 
+    {
     <label for="username">Username</label>
-    <br />
-    @Html.EditorFor(m => m.Username);
-    <br />
+    @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "form-control", @data_val = "true", @required = "required" } });
     <label for="password">Password</label>
-    <br />
-    @Html.PasswordFor(m => m.Password);
+    @Html.PasswordFor(m => m.Password, new { @required = "required" });
     <br />
     <input type="submit" value="Login" />
-}
-
-<p>@ViewBag.LoginError</p>
+    <p id = "login-error" > @ViewBag.LoginError </p>
+    }
+</div>

@@ -1,44 +1,41 @@
 ﻿@model RegisterViewingModel
 @{
-    ViewData["Title"] = "RegisterViewing";
+    ViewData["Title"] = "Register Viewing";
 }
 
-<h1>Register New Movie Viewing</h1>
+@Html.Partial("_Menu")
 
-@using (Html.BeginForm())
-{
-    <label for="movieId">Movie</label>
-    <br />
-    <select name="movieId">
+<div class="container">
+    <h1>Register New Movie Viewing</h1>
+    <div class="container-form">
 
-        @foreach (var movie in Model.Movies)
+        @using (Html.BeginForm(FormMethod.Post, new { @id = "viewing-form" }))
         {
-            <option value="@movie.Id">@movie.Title</option>
+            <label for="movieId">Movie</label>
+            <select name="movieId" required>
+
+                @foreach (var movie in Model.Movies)
+                {
+                    <option value="@movie.Id">@movie.Title</option>
+                }
+
+            </select>
+            <label for="theaterId">Theater</label>
+            <select name="theaterId" required>
+
+                @foreach (var theater in Model.Theaters)
+                {
+                    <option value="@theater.Id">@theater.Name</option>
+                }
+
+            </select>
+            <label for="date">Date</label>
+            <input type="date" name="date" required/>
+            <label for="time">Time(HH:MM)</label>
+            <input name="time" type="time" required/>
+            <input type="submit" value="Register Viewing" />
         }
 
-    </select>
-    <br />
-    <label for="theaterId">Theater</label>
-    <br />
-    <select name="theaterId">
+    </div>
+</div>
 
-        @foreach (var theater in Model.Theaters)
-        {
-            <option value="@theater.Id">@theater.Name</option>
-        }
-
-    </select>
-    <br />
-    <label for="date">Date</label>
-    <br />
-    <input type="date" name="date" />
-    <br />
-    <label for="time">Time(HH:MM)</label>
-    <br />
-    <input name="time" type="time"/>
-    <br />
-    <input type="submit" value="Register Viewing" />
-}
-
-<br />
-@Html.ActionLink("Back", "Index");
