@@ -3,9 +3,13 @@
     Layout = "_Layout";
 }
 
-<h1>@Html.DisplayFor(m => m.Title)</h1>
-<img src="@Html.DisplayFor(m => m.ImgPath)"/>
-<h3>@Html.DisplayFor(m => m.Runtime)</h3>
-<h3>@Html.DisplayFor(m => m.Genre)</h3>
-<p>@Html.DisplayFor(m => m.Description)</p>
+<div class="grid-container">
 
+    <div class="grid-item"><img src="@Html.DisplayFor(m => m.ImgPath)" style="width:100%" /></div>
+    <div class="grid-item">
+        <h1>@Html.DisplayFor(m => m.Title)</h1>
+        <h2>@Html.DisplayFor(m => m.Genre)</h2>
+        <h3>Runtime @Html.DisplayFor(m => m.Runtime) minutes</h3>
+        <p style="color:white;">@Html.DisplayFor(m => m.Description)</p>
+    </div>
+</div>
