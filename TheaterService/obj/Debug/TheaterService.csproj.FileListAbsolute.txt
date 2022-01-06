@@ -1,0 +1,36 @@
+C:\Users\xtrom\Source\Repos\xtromenia\TheaterService\TheaterService\bin\TheaterService.dll.config
+C:\Users\xtrom\Source\Repos\xtromenia\TheaterService\TheaterService\bin\TheaterService.dll
+C:\Users\xtrom\Source\Repos\xtromenia\TheaterService\TheaterService\bin\TheaterService.pdb
+C:\Users\xtrom\Source\Repos\xtromenia\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.AssemblyReference.cache
+C:\Users\xtrom\Source\Repos\xtromenia\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.CoreCompileInputs.cache
+C:\Users\xtrom\Source\Repos\xtromenia\TheaterService\TheaterService\obj\Debug\TheaterService.dll
+C:\Users\xtrom\Source\Repos\xtromenia\TheaterService\TheaterService\obj\Debug\TheaterService.pdb
+C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterService\bin\EntityFramework.dll
+C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterService\bin\EntityFramework.SqlServer.dll
+C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterService\bin\EntityFramework.xml
+C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterService\bin\EntityFramework.SqlServer.xml
+C:\Users\xtrom\source\repos\xtromenia\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.CopyComplete
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\bin\TheaterService.dll.config
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\bin\TheaterService.dll
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\bin\TheaterService.pdb
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\bin\EntityFramework.dll
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\bin\EntityFramework.SqlServer.dll
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\bin\EntityFramework.xml
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\bin\EntityFramework.SqlServer.xml
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.AssemblyReference.cache
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.CoreCompileInputs.cache
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.CopyComplete
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.dll
+C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.pdb
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\bin\TheaterService.dll.config
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\bin\TheaterService.dll
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\bin\TheaterService.pdb
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\bin\EntityFramework.dll
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\bin\EntityFramework.SqlServer.dll
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\bin\EntityFramework.xml
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\bin\EntityFramework.SqlServer.xml
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\obj\Debug\TheaterService.csproj.AssemblyReference.cache
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\obj\Debug\TheaterService.csproj.CoreCompileInputs.cache
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\obj\Debug\TheaterService.csproj.CopyComplete
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\obj\Debug\TheaterService.dll
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterService\obj\Debug\TheaterService.pdb
