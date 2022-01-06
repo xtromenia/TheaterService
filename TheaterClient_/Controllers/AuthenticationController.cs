@@ -30,10 +30,11 @@ namespace TheaterClient_.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(Customer newCustomer)
+        public async Task<IActionResult> Register(Customer newCustomer)
         {
             service.RegisterCustomer(newCustomer);
-            return RedirectToAction("Login");
+            await LoginAsync(newCustomer);
+            return RedirectToAction("", "Home");
         }
         public IActionResult Login()
         {
@@ -59,7 +60,7 @@ namespace TheaterClient_.Controllers
                     CookieAuthenticationDefaults.AuthenticationScheme,
                     new ClaimsPrincipal(identity));
                 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("", "Home");
             }else
             {
                 ViewBag.Status = "Error, please try again.";
@@ -70,7 +71,7 @@ namespace TheaterClient_.Controllers
         public async Task<IActionResult> LogoutAsync()
         {
             await HttpContext.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction("", "Home");
         }
     }
 }
