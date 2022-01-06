@@ -60,7 +60,7 @@ namespace TheaterClient_.Controllers
                     CookieAuthenticationDefaults.AuthenticationScheme,
                     new ClaimsPrincipal(identity));
                 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("", "Home");
             }else
             {
                 ViewBag.Status = "Error, please try again.";
@@ -71,7 +71,7 @@ namespace TheaterClient_.Controllers
         public async Task<IActionResult> LogoutAsync()
         {
             await HttpContext.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction("", "Home");
         }
     }
 }
