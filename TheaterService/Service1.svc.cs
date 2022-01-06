@@ -160,7 +160,7 @@ namespace TheaterService
                     customer.Id = customerInDb.Id;
                     customer.Name = customerInDb.Name;
                     customer.Email = customerInDb.Email;
-                    customer.Booking = customerInDb.Booking;
+                    //customer.Booking = customerInDb.Booking; Temporary fix for problem in admin view.
                     customers.Add(customer);
                 }
 
@@ -178,7 +178,7 @@ namespace TheaterService
                     TheaterData theaterData = new TheaterData();
                     theaterData.Id = theater.Id;
                     theaterData.Name = theater.Name;
-                    theaterData.Seat = theater.Seat;
+                    //theaterData.Seat = theater.Seat; Temporary fix for problem in admin view.
                     theaters.Add(theaterData);
                 }
                 return theaters;
