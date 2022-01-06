@@ -21,10 +21,7 @@ namespace TheaterClient.Controllers
         public IActionResult Index(string genre)
         {
             List<MovieData> movies = service.GetMovies().ToList();
-            if (genre != "All")
-            {
-                ViewBag.Genre = genre;
-            }
+            ViewBag.Genre = genre;
             return View(movies);
         }
     }

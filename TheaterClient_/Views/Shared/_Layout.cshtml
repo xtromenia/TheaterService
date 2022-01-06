@@ -7,37 +7,18 @@
 </head>
 <body>
     <header>
-        <h1><a href="/Home/">Cinema</a></h1>
+        @Html.ActionLink("Home", "Index", "Home")
         @if (User.Identity.IsAuthenticated)
         {
-            <a class="button" href="/User/Index">@User.Identity.Name</a>
-            <a class="button" href="/Authentication/Logout">Log Out</a>
+            @Html.ActionLink("Logout", "Logout", "Authentication")
+            @Html.ActionLink(User.Identity.Name, "Index", "User")
         }
         else
         {
-            <a class="button" href="javascript:void(0)" onclick="toggleLogin('login')">Login</a>
-            <a class="button" href="javascript:void(0)" onclick="toggleLogin('register')">Register</a>
+            @Html.ActionLink("Register", "Register", "Authentication")
+            @Html.ActionLink("Login", "Login", "Authentication")
         }
     </header>
-    <section id="login" class="login hidden">
-        <a href="javascript:void(0)" onclick="toggleLogin('login')"></a>
-        <form action="/Authentication/Login" method="post" enctype="multipart/form-data">
-            <h2>Log In</h2>
-            <input type="text" name="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" />
-            <input type="submit" name="submit" value="Log In" />
-        </form>
-    </section>
-    <section id="register" class="login hidden">
-        <a href="javascript:void(0)" onclick="toggleLogin('register')"></a>
-        <form action="/Authentication/Register" method="post" enctype="multipart/form-data">
-            <h2>Register</h2>
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="text" name="email" placeholder="Email" required />
-            <input type="password" name="password" placeholder="Password" required />
-            <input type="submit" name="submit" value="Register" />
-        </form>
-    </section>
     
     @RenderBody()
     

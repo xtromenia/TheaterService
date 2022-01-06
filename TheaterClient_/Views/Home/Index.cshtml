@@ -4,36 +4,23 @@
 }
 
 @* Hämtar bilden på den senaste registrerade filmen och sätter som banner *@
-<section id="jumbo" style="background-image: url('@Html.DisplayFor(m => m.LastOrDefault().ImgPath)')">
-    <a href="/Movie/Index?id=@Html.DisplayFor(m => m.LastOrDefault().Id)"></a>
+<section id="jumbo" style="background-image: url('@Html.DisplayFor(m => m.LastOrDefault().ImgPath)'" )>
 </section>
 <section id="movielist">
     <nav>
         @using (Html.BeginForm(FormMethod.Get))
         {
             @* Skapar en drop-down-lista med alla genres som finns i filmlistan. *@
-            <select name="genre" id="genre-list" onchange="this.form.submit()">
-                <option value="All">All Genres</option>
+            <select name="genre" id="genre-list">
+                <option value="all">All Genres</option>
                 @* LINQ för att hitta alla modeller som har ett unikt genre-namn, alltså kommer inte action 2x. *@
                 @foreach (var genre in Model.Select(x => x.Genre).Distinct())
                 {
-                    if (ViewBag.Genre != null)
-                    {
-                        if (genre.Equals(ViewBag.Genre))
-                        {
-                            <option value="@genre" selected>@genre</option>
-                        }
-                        else
-                        {
-                            <option value="@genre">@genre</option>
-                        }
-                    }
-                    else
-                    {
-                        <option value="@genre">@genre</option>
-                    }
+                    <option value="@genre">@genre</option>
                 }
             </select>
+            <input type="submit" value="Append" />
+            <h1>@ViewBag.Genre</h1>
         }
     </nav>
 
