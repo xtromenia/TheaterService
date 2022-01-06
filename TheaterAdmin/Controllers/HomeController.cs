@@ -21,21 +21,28 @@ namespace TheaterAdmin.Controllers
         [HttpPost]
         public async Task<IActionResult> IndexAsync(Admin admin)
         {
-            if (admin.Username.Equals("admin") &&
-                admin.Password.Equals("password"))
-            {
-                var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
-                identity.AddClaim(new Claim(ClaimTypes.Name, admin.Username));
-                await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(identity));
-                return RedirectToAction("Index", "Admin");
-            }
-            else
+           try{
+                if (admin.Username.Equals("admin") &&
+                 admin.Password.Equals("password"))
+                {
+                    var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+                    identity.AddClaim(new Claim(ClaimTypes.Name, admin.Username));
+                    await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(identity));
+                    return RedirectToAction("Index", "Admin");
+                }
+                else
+                {
+                    ViewBag.LoginError = "Wrong info, try again.";
+                    return View();
+                }
+            }catch(Exception e)
             {
                 ViewBag.LoginError = "Wrong info, try again.";
                 return View();
             }
+
         }
 
         public async Task<IActionResult> LogoutAsync()

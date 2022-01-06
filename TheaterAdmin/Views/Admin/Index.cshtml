@@ -4,15 +4,22 @@
 }
 
 <h1>Welcome back @User.Identity.Name</h1>
-<ul>
-    <li>
+
+<nav id="menu">
+    <div class="menu-button">
         @Html.ActionLink("Register Movie", "RegisterMovie")
-    </li>
-    <li>
+    </div>
+
+    <div class="menu-button">
         @Html.ActionLink("Register Viewing", "RegisterViewing")
-    </li>
-    <li>
+    </div>
+
+    <div class="menu-button">
         @Html.ActionLink("List Customers", "ListCustomers")
-    </li>
-</ul>
-@Html.ActionLink("Logout", "Logout", "Home")
+    </div>
+
+    <div class="menu-button">
+        @Html.ActionLink("Logout", "Logout", "Home")
+    </div>
+</nav>
+
