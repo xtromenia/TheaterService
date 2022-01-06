@@ -3,23 +3,4 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Welcome back @User.Identity.Name</h1>
-
-<nav id="menu">
-    <div class="menu-button">
-        @Html.ActionLink("Register Movie", "RegisterMovie")
-    </div>
-
-    <div class="menu-button">
-        @Html.ActionLink("Register Viewing", "RegisterViewing")
-    </div>
-
-    <div class="menu-button">
-        @Html.ActionLink("List Customers", "ListCustomers")
-    </div>
-
-    <div class="menu-button">
-        @Html.ActionLink("Logout", "Logout", "Home")
-    </div>
-</nav>
-
+@Html.Partial("_Menu")

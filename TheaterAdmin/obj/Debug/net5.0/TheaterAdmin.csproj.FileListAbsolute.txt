@@ -250,3 +250,4 @@ C:\Users\letrj\Source\Repos\TheaterService\TheaterAdmin\obj\Debug\net5.0\Theater
 C:\Users\letrj\Source\Repos\TheaterService\TheaterAdmin\obj\Debug\net5.0\ref\TheaterAdmin.dll
 C:\Users\letrj\Source\Repos\TheaterService\TheaterAdmin\obj\Debug\net5.0\TheaterAdmin.pdb
 C:\Users\letrj\Source\Repos\TheaterService\TheaterAdmin\obj\Debug\net5.0\TheaterAdmin.genruntimeconfig.cache
+C:\Users\letrj\Source\Repos\TheaterService\TheaterAdmin\obj\Debug\net5.0\Razor\Views\Shared\_Menu.cshtml.g.cs
