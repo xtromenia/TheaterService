@@ -30,10 +30,11 @@ namespace TheaterClient_.Controllers
         }
 
         [HttpPost]
-        public IActionResult Register(Customer newCustomer)
+        public async Task<IActionResult> Register(Customer newCustomer)
         {
             service.RegisterCustomer(newCustomer);
-            return RedirectToAction("Login");
+            await LoginAsync(newCustomer);
+            return RedirectToAction("", "Home");
         }
         public IActionResult Login()
         {
