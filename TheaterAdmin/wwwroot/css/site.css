@@ -69,3 +69,35 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+
+
+/*Truls edit
+-------------------------------------------------- */
+h1 {
+    color: white
+}
+
+h2 {
+    color: var(--coloraccent);
+}
+
+h3 {
+    color: white
+}
+
+.container {
+    width: 80%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px;
+}
+
+.grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: left;
+}

@@ -22,3 +22,15 @@ C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterServi
 C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.CopyComplete
 C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.dll
 C:\Users\xtrom\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.pdb
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\bin\TheaterService.dll.config
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\bin\TheaterService.dll
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\bin\TheaterService.pdb
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\bin\EntityFramework.dll
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\bin\EntityFramework.SqlServer.dll
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\bin\EntityFramework.xml
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\bin\EntityFramework.SqlServer.xml
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.AssemblyReference.cache
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.CoreCompileInputs.cache
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.csproj.CopyComplete
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.dll
+C:\Users\letrj\Source\Repos\TheaterService\TheaterService\obj\Debug\TheaterService.pdb

@@ -7156,19 +7156,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xtrom\\.nuget\\packages\\": {}
+    "C:\\Users\\letrj\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
+      "projectUniqueName": "C:\\Users\\letrj\\Source\\Repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
       "projectName": "TheaterAdmin",
-      "projectPath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
-      "packagesPath": "C:\\Users\\xtrom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService\\TheaterAdmin\\obj\\",
+      "projectPath": "C:\\Users\\letrj\\Source\\Repos\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
+      "packagesPath": "C:\\Users\\letrj\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\letrj\\Source\\Repos\\TheaterService\\TheaterAdmin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\xtrom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\letrj\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7225,6 +7225,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.12, 5.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7233,7 +7239,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
