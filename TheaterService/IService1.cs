@@ -37,6 +37,12 @@ namespace TheaterService
         [OperationContract]
         void UpdateCustomerMail(CustomerData customer);
 
+
+
+        [OperationContract]
+        List<BookingData> GetCustomersBookings(int customerId);
+
+
         //Admin
         [OperationContract]
         void RegisterMovie(Movie newMovie);
@@ -121,5 +127,29 @@ namespace TheaterService
         [DataMember]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Viewing> Viewing { get; set; }
+    }
+    [ServiceContract]
+    public class BookingData
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public BookingViewingData Viewing { get; set; }
+        [DataMember]
+        public List<int> Seats { get; set; }
+    }
+
+    //  Subset av ViewingData enbart avsedd för bookings, avskalad därefter
+    [ServiceContract]
+    public class BookingViewingData
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public DateTime Date { get; set; }
+        [DataMember]
+        public MovieData Movie { get; set; }
+        [DataMember]
+        public string TheaterName { get; set; }
     }
 }

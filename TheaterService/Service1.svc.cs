@@ -193,5 +193,45 @@ namespace TheaterService
                 db.SaveChanges();
             }
         }
+
+        //  Get all bookings for a specific customer
+        public List<BookingData> GetCustomersBookings(int customerId)
+        {
+            List<BookingData> data = new List<BookingData>();
+            using (DataModel db = new DataModel())
+            {
+                Customer customer = db.Customer.Find(customerId);
+                List<Booking> bookings = customer.Booking.ToList();
+                foreach (Booking booking in bookings)
+                {
+                    BookingData bookingData = new BookingData();
+                    bookingData.Id = booking.Id;
+
+                    BookingViewingData viewingData = new BookingViewingData();
+                    viewingData.Id = booking.Viewing.Id;
+                    viewingData.Date = (DateTime)booking.Viewing.Date;
+                    viewingData.TheaterName = booking.Viewing.Theater.Name;
+
+                    MovieData movieData = new MovieData();
+                    movieData.Id = booking.Viewing.Movie.Id;
+                    movieData.Title = booking.Viewing.Movie.Title;
+                    movieData.Runtime = booking.Viewing.Movie.Runtime;
+                    //  If neccesary, add more data to moviedata object, such as description, genre, etc
+
+                    viewingData.Movie = movieData;
+                    bookingData.Viewing = viewingData;
+
+                    List<int> seats = new List<int>();
+                    foreach (Seat seat in booking.Seat)
+                    {
+                        seats.Add((int)seat.Number);
+                    }
+                    bookingData.Seats = seats;
+
+                    data.Add(bookingData);
+                }
+            }
+            return data;
+        }
     }
 }
