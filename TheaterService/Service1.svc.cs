@@ -73,7 +73,7 @@ namespace TheaterService
                 customerData.Id = custFromDb.Id;
                 customerData.Name = custFromDb.Name;
                 customerData.Email = custFromDb.Email;
-                customerData.Booking = custFromDb.Booking;
+                //customerData.Booking = custFromDb.Booking; //ta inte med booking här blir error då det ej är bookingdata.
                 return customerData;
             }
         }
@@ -88,7 +88,7 @@ namespace TheaterService
                 customerData.Id = customerFromDb.Id;
                 customerData.Email = customerFromDb.Email;
                 customerData.Name = customerFromDb.Name;
-                customerData.Booking = customerFromDb.Booking;
+                //customerData.Booking = customerFromDb.Booking; //ta inte med booking här blir error då det ej är bookingdata.
                 customerData.Password = customerFromDb.Password;
                 return customerData;
             }

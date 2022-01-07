@@ -37,8 +37,6 @@ namespace TheaterService
         [OperationContract]
         void UpdateCustomerMail(CustomerData customer);
 
-
-
         [OperationContract]
         List<BookingData> GetCustomersBookings(int customerId);
 
