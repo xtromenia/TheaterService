@@ -64,7 +64,7 @@ namespace TheaterClient_.Controllers
             }else
             {
                 ViewBag.Status = "Error, please try again.";
-                return View();
+                return RedirectToAction("", "Home");
             }
         }
 

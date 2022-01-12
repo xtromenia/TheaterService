@@ -488,3 +488,6 @@ C:\Users\xtrom\Documents\VSC Projects\TheaterService\TheaterClient_\obj\Debug\ne
 C:\Users\xtrom\Documents\VSC Projects\TheaterService\TheaterClient_\obj\Debug\net5.0\ref\TheaterClient_.dll
 C:\Users\xtrom\Documents\VSC Projects\TheaterService\TheaterClient_\obj\Debug\net5.0\TheaterClient_.pdb
 C:\Users\xtrom\Documents\VSC Projects\TheaterService\TheaterClient_\obj\Debug\net5.0\TheaterClient_.genruntimeconfig.cache
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterClient_\obj\Debug\net5.0\Razor\Views\User\ActiveBookings.cshtml.g.cs
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterClient_\obj\Debug\net5.0\Razor\Views\User\BookingHistory.cshtml.g.cs
+C:\Users\josef\Documents\HV\År 2\[4] E-tjänster och XML\Grupparbete\TheaterClient_\obj\Debug\net5.0\Razor\Views\Shared\_Menu.cshtml.g.cs

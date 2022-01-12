@@ -40,5 +40,23 @@ namespace TheaterClient_.Controllers
             service.UpdateCustomerPass(customerToUpdate);
             return RedirectToAction("Index");
         }
+
+        public IActionResult ActiveBookings()
+        {
+            //Hämtar id ur sparade identities.
+            int id = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            List<BookingData> bookings = service.GetCustomersBookings(id).ToList();
+            List<BookingData> activeBookings = bookings.FindAll(x => x.Viewing.Date > DateTime.Now);
+            return View(activeBookings);
+        }
+
+        public IActionResult BookingHistory()
+        {
+            //Hämtar id ur sparade identities.
+            int id = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+            List<BookingData> bookings = service.GetCustomersBookings(id).ToList();
+            List<BookingData> pastBookings = bookings.FindAll(x => x.Viewing.Date < DateTime.Now);
+            return View(pastBookings);
+        }
     }
 }

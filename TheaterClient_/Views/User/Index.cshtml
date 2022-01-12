@@ -4,19 +4,26 @@
     Layout = "_Layout";
 }
 
-<h1>Welcome @Html.DisplayFor(m => m.Name)</h1>
+@Html.Partial("_Menu")
 
-@using (Html.BeginForm("UpdateMail", "User"))
-{
-    <p>Current mail: @Html.DisplayFor(m => m.Email)</p>
-    <label>New mail: </label>
-    @Html.EditorFor(m => m.Email);
-    <input value="Update Email" type="submit" />
-}
+<div class="profile-container">
 
-@using (Html.BeginForm("UpdatePassword", "User"))
-{
-    <label>New Password: </label>
-    @Html.TextBoxFor(m => m.Password)
-    <input value="Update Password" type="submit"/>
-}
+    <h1>@Html.DisplayFor(m => m.Name)</h1>
+
+    <div class="container-form">
+        @using (Html.BeginForm("UpdateMail", "User"))
+        {
+            <label>New mail: </label>
+            @Html.EditorFor(m => m.Email);
+            <input value="Update Email" type="submit" />
+        }
+
+        @using (Html.BeginForm("UpdatePassword", "User"))
+        {
+            <label>New Password: </label>
+            @Html.PasswordFor(m => m.Password)
+            <input value="Update Password" type="submit" />
+        }
+    </div>
+</div>
+
