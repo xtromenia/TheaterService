@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xtrom\\Documents\\VSC Projects\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj": {}
+    "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xtrom\\Documents\\VSC Projects\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj": {
+    "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xtrom\\Documents\\VSC Projects\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
+        "projectUniqueName": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj",
         "projectName": "TheaterAdmin",
-        "projectPath": "C:\\Users\\xtrom\\Documents\\VSC Projects\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
-        "packagesPath": "C:\\Users\\xtrom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xtrom\\Documents\\VSC Projects\\TheaterService\\TheaterAdmin\\obj\\",
+        "projectPath": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj",
+        "packagesPath": "C:\\Users\\josef\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\xtrom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\josef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

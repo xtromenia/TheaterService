@@ -16,9 +16,73 @@ namespace TheaterService
         //Hämtar en specifik film med hjälp av id för att visa upp i filmvyn på front-end.
         public MovieData GetMovie(int id)
         {
-            List<MovieData> movies = GetMovies();
-            MovieData movie = movies.Find(m => m.Id == id);
-            return movie;
+            //List<MovieData> movies = GetMovies();
+            //MovieData movie = movies.Find(m => m.Id == id);
+            MovieData movieData = new MovieData();
+            using (DataModel db = new DataModel())
+            {
+                Movie movie = db.Movie.Find(id);
+                movieData.Id = movie.Id;
+                movieData.Title = movie.Title;
+                movieData.Runtime = movie.Runtime;
+                movieData.Description = movie.Description;
+                movieData.ImgPath = movie.ImgPath;
+                movieData.Genre = movie.Genre;
+
+                List<MovieViewingData> viewings = new List<MovieViewingData>();
+                foreach (Viewing viewing in movie.Viewing.OrderBy(m => m.Date))
+                {
+                    MovieViewingData viewingData = new MovieViewingData();
+                    viewingData.Id = viewing.Id;
+                    viewingData.Date = (DateTime)viewing.Date;
+                    viewingData.Theater = viewing.Theater.Name;
+
+                    int availableSeats = 0;
+                    List<List<SeatData>> seats = new List<List<SeatData>>();
+                    int nRows = (int)viewing.Theater.Seat.Max(m => m.Row);
+                    for (int i = 0; i < nRows; i++)
+                    {
+                        List<SeatData> row = new List<SeatData>();
+                        seats.Add(row);
+                    }
+                    foreach (Seat seat in viewing.Theater.Seat.OrderBy(m => m.Row).ThenBy(n => n.Number))
+                    {
+                        SeatData seatData = new SeatData();
+                        seatData.Id = seat.Id;
+                        seatData.Number = (int)seat.Number;
+
+                        //  TODO: REDO THIS. IT DOESNT WORK
+                        //seatData.IsBooked = (seat.Booking.Count > 0);
+                        foreach (Booking booking in viewing.Booking)
+                        {
+                            if (booking.Seat.Contains(seat))
+                            {
+                                seatData.IsBooked = true;
+                                break;
+                            }
+                            else
+                            {
+                                seatData.IsBooked = false;
+                            }
+                        }
+
+
+                        if (!seatData.IsBooked)
+                        {
+                            availableSeats++;
+                        }
+                        seats.ElementAt((int)seat.Row - 1).Add(seatData);
+                    }
+
+                    viewingData.AvailableSeats = availableSeats;
+                    viewingData.NSeats = viewing.Theater.Seat.Count();
+                    viewingData.Seats = seats;
+                    viewings.Add(viewingData);
+                }
+
+                movieData.Viewing = viewings;
+            }
+            return movieData;
         }
 
         //Funktion som hämtar alla registrerade filmer i databasen och skickar över till front-end i form av MovieData objekt.
@@ -73,7 +137,7 @@ namespace TheaterService
                 customerData.Id = custFromDb.Id;
                 customerData.Name = custFromDb.Name;
                 customerData.Email = custFromDb.Email;
-                customerData.Booking = custFromDb.Booking;
+                //customerData.Booking = custFromDb.Booking;
                 return customerData;
             }
         }
@@ -88,7 +152,7 @@ namespace TheaterService
                 customerData.Id = customerFromDb.Id;
                 customerData.Email = customerFromDb.Email;
                 customerData.Name = customerFromDb.Name;
-                customerData.Booking = customerFromDb.Booking;
+                //customerData.Booking = customerFromDb.Booking;
                 customerData.Password = customerFromDb.Password;
                 return customerData;
             }
@@ -232,6 +296,54 @@ namespace TheaterService
                 }
             }
             return data;
+        }
+
+        public bool BookViewing(BookingSubmissionData bookingData)
+        {
+            //Check seat availability for viewing
+            foreach (int seatid in bookingData.SeatIds)
+            {
+                if (!SeatAvailable(seatid, bookingData.ViewingId))
+                {
+                    return false;
+                }
+            }
+            //Book seats
+            using (DataModel db = new DataModel())
+            {
+                Booking booking = new Booking();
+                booking.CustomerID = bookingData.CustomerId;
+                booking.Customer = db.Customer.Find(bookingData.CustomerId);
+                booking.ViewingID = bookingData.ViewingId;
+                booking.Viewing = db.Viewing.Find(bookingData.ViewingId);
+                List<Seat> seats = new List<Seat>();
+                foreach (int seatid in bookingData.SeatIds)
+                {
+                    Seat seat = db.Seat.Find(seatid);
+                    seats.Add(seat);
+                }
+                booking.Seat = seats;
+                db.Booking.Add(booking);
+                db.SaveChanges();
+            }
+            return true;
+        }
+
+        private bool SeatAvailable(int seatid, int viewingid)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Seat seat = db.Seat.Find(seatid);
+                Viewing viewing = db.Viewing.Find(viewingid);
+                foreach (Booking booking in viewing.Booking)
+                {
+                    if (booking.Seat.Contains(seat))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
     }
 }

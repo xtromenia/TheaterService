@@ -295,19 +295,7 @@ section#jumbo a {
 
 
 
-/*Truls edit*/
-/*Text*/
-h1 {
-    color: white
-}
 
-h2 {
-    color: var(--coloraccent);
-}
-
-h3 {
-    color: white
-}
 
 .container {
     width: 80%;
@@ -315,8 +303,21 @@ h3 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 450px 1fr 450px;
     padding: 10px;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1440px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.grid-container#moviecontainer {
+    color: white;
 }
 
 .grid-item {
@@ -325,3 +326,219 @@ h3 {
     text-align: left;
 }
 
+.grid-item img {
+    border-radius: 8px;
+}
+
+.grid-item#moviedetails {
+    grid-column: 2 / span 2;
+}
+
+.grid-item#moviedetails h2 {
+    margin: 0;
+    font-size: 52px;
+}
+
+.grid-item#moviedetails a {
+    color: var(--coloraccent);
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.grid-item#moviedetails p {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.grid-item#moviedetails p#desc {
+    font-size: 22px;
+}
+
+
+.grid-item#viewings {
+    grid-column: 2 / span 1;
+}
+
+.grid-item#viewings article {
+    width: 100%;
+    height: 90px;
+    background-color: var(--colorfg);
+    border-radius: 8px;
+    margin-top: 30px;
+    padding: 20px 30px;
+    display: grid;
+    grid-template-columns: 1fr 125px;
+    grid-column-gap: 30px;
+    grid-template-rows: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.grid-item#viewings article.full {
+    background-color: var(--colorbg);
+    color: var(--colorfg);
+}
+
+.grid-item#viewings article section {
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    grid-column-gap: 20px;
+}
+
+.grid-item#viewings article section h3, .grid-item#viewings article section h4, .grid-item#viewings article section p {
+    margin: 0;
+    font-size: 25px;
+}
+
+.grid-item#viewings article section p {
+    text-align: right;
+}
+
+.grid-item#viewings article a {
+    background-color: var(--coloraccent);
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    transition: background-color .5s, transform .5s, box-shadow .5s;
+}
+
+.grid-item#viewings article a:hover, .grid-item#viewings article a:focus {
+    background-color: var(--coloraccenttertiary);
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+}
+
+
+
+.grid-item#viewings .formcontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+}
+
+.grid-item#viewings .formcontainer.hidden {
+    display: none;
+    z-index: -1;
+}
+
+.grid-item#viewings .formcontainer a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    cursor: default;
+}
+
+.grid-item#viewings .formcontainer form {
+    max-width: 75%;
+    min-width: 750px;
+    padding: 20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--colorbg);
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px black;
+    z-index: 12;
+    color: white;
+    text-align: center;
+}
+
+.grid-item#viewings .formcontainer form h5 {
+    font-size: 26px;
+    margin: 0;
+    text-align: center;
+}
+
+.grid-item#viewings .formcontainer form .theater {
+    padding: 20px;
+    background-color: var(--colorfg);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.grid-item#viewings .formcontainer form .moviescreen {
+    width: 50%;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.grid-item#viewings .formcontainer form .row {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.grid-item#viewings .formcontainer form .row label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.grid-item#viewings .formcontainer form .row label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.grid-item#viewings .formcontainer form .row label span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 6px;
+    transition: background-color .5s;
+}
+
+.grid-item#viewings .formcontainer form .row label:hover input ~ span, .grid-item#viewings .formcontainer form .row label:focus-within input ~ span {
+    background-color: rgb(160, 160, 160);
+}
+
+.grid-item#viewings .formcontainer form .row label input:checked ~ span {
+    background-color: var(--coloraccent);
+}
+
+.grid-item#viewings .formcontainer form .row label input:disabled ~ span {
+    background-color: var(--colorbg);
+    cursor: default;
+}
+
+.grid-item#viewings .formcontainer form input[type=submit] {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--coloraccent);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .5s, transform .5s, box-shadow .5s;
+}
+
+.grid-item#viewings .formcontainer form input[type=submit]:hover, .grid-item#viewings .formcontainer form input[type=submit]:focus {
+    background-color: var(--coloraccenttertiary);
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 6px black;
+}
