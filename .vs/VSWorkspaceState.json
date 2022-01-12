@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\TheaterClient_",
+    "\\TheaterClient_\\Controllers"
   ],
-  "SelectedNode": "\\TheaterService.sln",
+  "SelectedNode": "\\TheaterClient_\\Controllers\\AuthenticationController.cs",
   "PreviewInSolutionExplorer": false
 }

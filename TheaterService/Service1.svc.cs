@@ -232,6 +232,37 @@ namespace TheaterService
             }
         }
 
+        public void RemoveCustomer(int id)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Customer customer = db.Customer.Find(id);
+
+                RemoveBookings(customer);
+
+                db.Customer.Remove(customer);
+
+                db.SaveChanges();
+            }
+        }
+
+        private void RemoveBookings(Customer customer)
+        {
+            using (DataModel db = new DataModel())
+            {
+
+                List<BookingData> bookings = GetCustomersBookings(customer.Id);
+
+                foreach(BookingData booking in bookings)
+                {
+                    Booking bookingInDb = db.Booking.Find(booking.Id);
+                    db.Booking.Remove(bookingInDb);
+                }
+
+                db.SaveChanges();
+            }
+        }
+
         public List<TheaterData> GetTheaters()
         {
             using (DataModel db = new DataModel())
@@ -345,5 +376,7 @@ namespace TheaterService
                 return true;
             }
         }
+
+
     }
 }

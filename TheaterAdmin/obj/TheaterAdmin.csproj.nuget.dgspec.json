@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj": {}
+    "C:\\Users\\xtrom\\Source\\Repos\\TheaterService3\\TheaterAdmin\\TheaterAdmin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj": {
+    "C:\\Users\\xtrom\\Source\\Repos\\TheaterService3\\TheaterAdmin\\TheaterAdmin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj",
+        "projectUniqueName": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService3\\TheaterAdmin\\TheaterAdmin.csproj",
         "projectName": "TheaterAdmin",
-        "projectPath": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj",
-        "packagesPath": "C:\\Users\\josef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\obj\\",
+        "projectPath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService3\\TheaterAdmin\\TheaterAdmin.csproj",
+        "packagesPath": "C:\\Users\\xtrom\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\xtrom\\Source\\Repos\\TheaterService3\\TheaterAdmin\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\josef\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\xtrom\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

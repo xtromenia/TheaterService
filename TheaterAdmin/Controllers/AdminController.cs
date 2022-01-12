@@ -59,5 +59,11 @@ namespace TheaterAdmin.Controllers
             List<CustomerData> customers = service.GetCustomers().ToList();
             return View(customers);
         }
+
+        public IActionResult RemoveCustomer(int id)
+        {
+            service.RemoveCustomer(id);
+            return RedirectToAction("ListCustomers");
+        }
     }
 }

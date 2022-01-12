@@ -57,6 +57,9 @@ namespace TheaterService
         List<CustomerData> GetCustomers();
 
         [OperationContract]
+        void RemoveCustomer(int id);
+
+        [OperationContract]
         List<TheaterData> GetTheaters();
     }
 
