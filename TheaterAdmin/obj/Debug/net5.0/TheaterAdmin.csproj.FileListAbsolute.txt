@@ -508,3 +508,4 @@ C:\Users\xtrom\Source\Repos\TheaterService3\TheaterAdmin\obj\Debug\net5.0\Theate
 C:\Users\xtrom\Source\Repos\TheaterService3\TheaterAdmin\obj\Debug\net5.0\ref\TheaterAdmin.dll
 C:\Users\xtrom\Source\Repos\TheaterService3\TheaterAdmin\obj\Debug\net5.0\TheaterAdmin.pdb
 C:\Users\xtrom\Source\Repos\TheaterService3\TheaterAdmin\obj\Debug\net5.0\TheaterAdmin.genruntimeconfig.cache
+C:\Users\xtrom\Source\Repos\TheaterService3\TheaterAdmin\obj\Debug\net5.0\Razor\Views\Admin\ListMovies.cshtml.g.cs

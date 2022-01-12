@@ -65,5 +65,16 @@ namespace TheaterAdmin.Controllers
             service.RemoveCustomer(id);
             return RedirectToAction("ListCustomers");
         }
+
+        public IActionResult ListMovies()
+        {
+            List<MovieData> movies = service.GetMovies().ToList();
+            return View(movies);
+        }
+        public IActionResult RemoveMovie(int id)
+        {
+            service.RemoveMovie(id);
+            return RedirectToAction("ListMovies");
+        }
     }
 }
