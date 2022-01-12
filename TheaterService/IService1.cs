@@ -42,6 +42,9 @@ namespace TheaterService
         [OperationContract]
         List<BookingData> GetCustomersBookings(int customerId);
 
+        [OperationContract]
+        bool BookViewing(BookingSubmissionData bookingData);
+
 
         //Admin
         [OperationContract]
@@ -57,15 +60,12 @@ namespace TheaterService
         List<TheaterData> GetTheaters();
     }
 
+
+
+
     [ServiceContract]
     public class MovieData
     {
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public void Movie()
-        {
-            Viewing = new HashSet<Viewing>();
-        }
         [DataMember]
         public int Id { get; set; }
         [DataMember]
@@ -79,9 +79,40 @@ namespace TheaterService
         [DataMember]
         public string Genre { get; set; }
         [DataMember]
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Viewing> Viewing { get; set; }
+        public List<MovieViewingData> Viewing { get; set; }
     }
+
+    //  ViewingData class specifically intended for the client booking functionality
+    [ServiceContract]
+    public class MovieViewingData
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public DateTime Date { get; set; }
+        [DataMember]
+        public string Theater { get; set; }
+        [DataMember]
+        public int AvailableSeats { get; set; }
+        [DataMember]
+        public int NSeats { get; set; }
+        [DataMember]
+        public List<List<SeatData>> Seats { get; set; }
+    }
+
+    [ServiceContract]
+    public class SeatData
+    {
+        [DataMember]
+        public int Id { get; set; }
+        [DataMember]
+        public int Number { get; set; }
+        [DataMember]
+        public bool IsBooked { get; set; }
+    }
+
+
+
 
     [ServiceContract]
     public class CustomerData
@@ -128,6 +159,10 @@ namespace TheaterService
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Viewing> Viewing { get; set; }
     }
+
+
+
+
     [ServiceContract]
     public class BookingData
     {
@@ -151,5 +186,19 @@ namespace TheaterService
         public MovieData Movie { get; set; }
         [DataMember]
         public string TheaterName { get; set; }
+    }
+
+
+
+    //  Data object to send to service to submit booking
+    [ServiceContract]
+    public class BookingSubmissionData
+    {
+        [DataMember]
+        public int ViewingId { get; set; }
+        [DataMember]
+        public int CustomerId { get; set; }
+        [DataMember]
+        public List<int> SeatIds { get; set; }
     }
 }

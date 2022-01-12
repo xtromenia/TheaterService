@@ -30,7 +30,7 @@ namespace ServiceReference1
         
         private string TitleField;
         
-        private ServiceReference1.Viewing[] ViewingField;
+        private ServiceReference1.MovieViewingData[] ViewingField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Description
@@ -111,7 +111,7 @@ namespace ServiceReference1
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Viewing[] Viewing
+        public ServiceReference1.MovieViewingData[] Viewing
         {
             get
             {
@@ -120,6 +120,334 @@ namespace ServiceReference1
             set
             {
                 this.ViewingField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MovieViewingData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class MovieViewingData : object
+    {
+        
+        private int AvailableSeatsField;
+        
+        private System.DateTime DateField;
+        
+        private int IdField;
+        
+        private int NSeatsField;
+        
+        private ServiceReference1.SeatData[][] SeatsField;
+        
+        private string TheaterField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AvailableSeats
+        {
+            get
+            {
+                return this.AvailableSeatsField;
+            }
+            set
+            {
+                this.AvailableSeatsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date
+        {
+            get
+            {
+                return this.DateField;
+            }
+            set
+            {
+                this.DateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NSeats
+        {
+            get
+            {
+                return this.NSeatsField;
+            }
+            set
+            {
+                this.NSeatsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.SeatData[][] Seats
+        {
+            get
+            {
+                return this.SeatsField;
+            }
+            set
+            {
+                this.SeatsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Theater
+        {
+            get
+            {
+                return this.TheaterField;
+            }
+            set
+            {
+                this.TheaterField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SeatData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class SeatData : object
+    {
+        
+        private int IdField;
+        
+        private bool IsBookedField;
+        
+        private int NumberField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsBooked
+        {
+            get
+            {
+                return this.IsBookedField;
+            }
+            set
+            {
+                this.IsBookedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Number
+        {
+            get
+            {
+                return this.NumberField;
+            }
+            set
+            {
+                this.NumberField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class Customer : object
+    {
+        
+        private ServiceReference1.Booking[] BookingField;
+        
+        private string EmailField;
+        
+        private int IdField;
+        
+        private string NameField;
+        
+        private string PasswordField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Booking[] Booking
+        {
+            get
+            {
+                return this.BookingField;
+            }
+            set
+            {
+                this.BookingField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email
+        {
+            get
+            {
+                return this.EmailField;
+            }
+            set
+            {
+                this.EmailField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password
+        {
+            get
+            {
+                return this.PasswordField;
+            }
+            set
+            {
+                this.PasswordField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Booking", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class Booking : object
+    {
+        
+        private ServiceReference1.Customer CustomerField;
+        
+        private System.Nullable<int> CustomerIDField;
+        
+        private int IdField;
+        
+        private ServiceReference1.Seat[] SeatField;
+        
+        private ServiceReference1.Viewing ViewingField;
+        
+        private System.Nullable<int> ViewingIDField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Customer Customer
+        {
+            get
+            {
+                return this.CustomerField;
+            }
+            set
+            {
+                this.CustomerField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CustomerID
+        {
+            get
+            {
+                return this.CustomerIDField;
+            }
+            set
+            {
+                this.CustomerIDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Seat[] Seat
+        {
+            get
+            {
+                return this.SeatField;
+            }
+            set
+            {
+                this.SeatField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Viewing Viewing
+        {
+            get
+            {
+                return this.ViewingField;
+            }
+            set
+            {
+                this.ViewingField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ViewingID
+        {
+            get
+            {
+                return this.ViewingIDField;
+            }
+            set
+            {
+                this.ViewingIDField = value;
             }
         }
     }
@@ -143,8 +471,6 @@ namespace ServiceReference1
         private ServiceReference1.Theater TheaterField;
         
         private System.Nullable<int> TheaterIDField;
-        
-        private System.Nullable<int> TimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public ServiceReference1.Booking[] Booking
@@ -236,17 +562,168 @@ namespace ServiceReference1
                 this.TheaterIDField = value;
             }
         }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Seat", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class Seat : object
+    {
+        
+        private ServiceReference1.Booking[] BookingField;
+        
+        private int IdField;
+        
+        private System.Nullable<int> NumberField;
+        
+        private System.Nullable<int> RowField;
+        
+        private ServiceReference1.Theater TheaterField;
+        
+        private System.Nullable<int> TheaterIDField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Time
+        public ServiceReference1.Booking[] Booking
         {
             get
             {
-                return this.TimeField;
+                return this.BookingField;
             }
             set
             {
-                this.TimeField = value;
+                this.BookingField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Number
+        {
+            get
+            {
+                return this.NumberField;
+            }
+            set
+            {
+                this.NumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Row
+        {
+            get
+            {
+                return this.RowField;
+            }
+            set
+            {
+                this.RowField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Theater Theater
+        {
+            get
+            {
+                return this.TheaterField;
+            }
+            set
+            {
+                this.TheaterField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> TheaterID
+        {
+            get
+            {
+                return this.TheaterIDField;
+            }
+            set
+            {
+                this.TheaterIDField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Theater", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class Theater : object
+    {
+        
+        private int IdField;
+        
+        private string NameField;
+        
+        private ServiceReference1.Seat[] SeatField;
+        
+        private ServiceReference1.Viewing[] ViewingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name
+        {
+            get
+            {
+                return this.NameField;
+            }
+            set
+            {
+                this.NameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Seat[] Seat
+        {
+            get
+            {
+                return this.SeatField;
+            }
+            set
+            {
+                this.SeatField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.Viewing[] Viewing
+        {
+            get
+            {
+                return this.ViewingField;
+            }
+            set
+            {
+                this.ViewingField = value;
             }
         }
     }
@@ -365,349 +842,6 @@ namespace ServiceReference1
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Theater", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
-    public partial class Theater : object
-    {
-        
-        private int IdField;
-        
-        private string NameField;
-        
-        private ServiceReference1.Seat[] SeatField;
-        
-        private ServiceReference1.Viewing[] ViewingField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id
-        {
-            get
-            {
-                return this.IdField;
-            }
-            set
-            {
-                this.IdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Seat[] Seat
-        {
-            get
-            {
-                return this.SeatField;
-            }
-            set
-            {
-                this.SeatField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Viewing[] Viewing
-        {
-            get
-            {
-                return this.ViewingField;
-            }
-            set
-            {
-                this.ViewingField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Booking", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
-    public partial class Booking : object
-    {
-        
-        private ServiceReference1.Customer CustomerField;
-        
-        private System.Nullable<int> CustomerIDField;
-        
-        private int IdField;
-        
-        private ServiceReference1.Seat[] SeatField;
-        
-        private ServiceReference1.Viewing ViewingField;
-        
-        private System.Nullable<int> ViewingIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Customer Customer
-        {
-            get
-            {
-                return this.CustomerField;
-            }
-            set
-            {
-                this.CustomerField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> CustomerID
-        {
-            get
-            {
-                return this.CustomerIDField;
-            }
-            set
-            {
-                this.CustomerIDField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id
-        {
-            get
-            {
-                return this.IdField;
-            }
-            set
-            {
-                this.IdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Seat[] Seat
-        {
-            get
-            {
-                return this.SeatField;
-            }
-            set
-            {
-                this.SeatField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Viewing Viewing
-        {
-            get
-            {
-                return this.ViewingField;
-            }
-            set
-            {
-                this.ViewingField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ViewingID
-        {
-            get
-            {
-                return this.ViewingIDField;
-            }
-            set
-            {
-                this.ViewingIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Customer", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
-    public partial class Customer : object
-    {
-        
-        private ServiceReference1.Booking[] BookingField;
-        
-        private string EmailField;
-        
-        private int IdField;
-        
-        private string NameField;
-        
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Booking[] Booking
-        {
-            get
-            {
-                return this.BookingField;
-            }
-            set
-            {
-                this.BookingField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email
-        {
-            get
-            {
-                return this.EmailField;
-            }
-            set
-            {
-                this.EmailField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id
-        {
-            get
-            {
-                return this.IdField;
-            }
-            set
-            {
-                this.IdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name
-        {
-            get
-            {
-                return this.NameField;
-            }
-            set
-            {
-                this.NameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password
-        {
-            get
-            {
-                return this.PasswordField;
-            }
-            set
-            {
-                this.PasswordField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Seat", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
-    public partial class Seat : object
-    {
-        
-        private ServiceReference1.Booking[] BookingField;
-        
-        private int IdField;
-        
-        private System.Nullable<int> NumberField;
-        
-        private System.Nullable<int> RowField;
-        
-        private ServiceReference1.Theater TheaterField;
-        
-        private System.Nullable<int> TheaterIDField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Booking[] Booking
-        {
-            get
-            {
-                return this.BookingField;
-            }
-            set
-            {
-                this.BookingField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id
-        {
-            get
-            {
-                return this.IdField;
-            }
-            set
-            {
-                this.IdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Number
-        {
-            get
-            {
-                return this.NumberField;
-            }
-            set
-            {
-                this.NumberField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Row
-        {
-            get
-            {
-                return this.RowField;
-            }
-            set
-            {
-                this.RowField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ServiceReference1.Theater Theater
-        {
-            get
-            {
-                return this.TheaterField;
-            }
-            set
-            {
-                this.TheaterField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> TheaterID
-        {
-            get
-            {
-                return this.TheaterIDField;
-            }
-            set
-            {
-                this.TheaterIDField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CustomerData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
     public partial class CustomerData : object
     {
@@ -784,6 +918,177 @@ namespace ServiceReference1
             set
             {
                 this.PasswordField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookingData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class BookingData : object
+    {
+        
+        private int IdField;
+        
+        private int[] SeatsField;
+        
+        private ServiceReference1.BookingViewingData ViewingField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int[] Seats
+        {
+            get
+            {
+                return this.SeatsField;
+            }
+            set
+            {
+                this.SeatsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.BookingViewingData Viewing
+        {
+            get
+            {
+                return this.ViewingField;
+            }
+            set
+            {
+                this.ViewingField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookingViewingData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class BookingViewingData : object
+    {
+        
+        private System.DateTime DateField;
+        
+        private int IdField;
+        
+        private ServiceReference1.MovieData MovieField;
+        
+        private string TheaterNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date
+        {
+            get
+            {
+                return this.DateField;
+            }
+            set
+            {
+                this.DateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id
+        {
+            get
+            {
+                return this.IdField;
+            }
+            set
+            {
+                this.IdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ServiceReference1.MovieData Movie
+        {
+            get
+            {
+                return this.MovieField;
+            }
+            set
+            {
+                this.MovieField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TheaterName
+        {
+            get
+            {
+                return this.TheaterNameField;
+            }
+            set
+            {
+                this.TheaterNameField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3-preview3.21351.2")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="BookingSubmissionData", Namespace="http://schemas.datacontract.org/2004/07/TheaterService")]
+    public partial class BookingSubmissionData : object
+    {
+        
+        private int CustomerIdField;
+        
+        private int[] SeatIdsField;
+        
+        private int ViewingIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerId
+        {
+            get
+            {
+                return this.CustomerIdField;
+            }
+            set
+            {
+                this.CustomerIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int[] SeatIds
+        {
+            get
+            {
+                return this.SeatIdsField;
+            }
+            set
+            {
+                this.SeatIdsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ViewingId
+        {
+            get
+            {
+                return this.ViewingIdField;
+            }
+            set
+            {
+                this.ViewingIdField = value;
             }
         }
     }
@@ -908,11 +1213,29 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateCustomerMail", ReplyAction="http://tempuri.org/IService1/UpdateCustomerMailResponse")]
         System.Threading.Tasks.Task UpdateCustomerMailAsync(ServiceReference1.CustomerData customer);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomersBookings", ReplyAction="http://tempuri.org/IService1/GetCustomersBookingsResponse")]
+        ServiceReference1.BookingData[] GetCustomersBookings(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomersBookings", ReplyAction="http://tempuri.org/IService1/GetCustomersBookingsResponse")]
+        System.Threading.Tasks.Task<ServiceReference1.BookingData[]> GetCustomersBookingsAsync(int customerId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BookViewing", ReplyAction="http://tempuri.org/IService1/BookViewingResponse")]
+        bool BookViewing(ServiceReference1.BookingSubmissionData bookingData);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/BookViewing", ReplyAction="http://tempuri.org/IService1/BookViewingResponse")]
+        System.Threading.Tasks.Task<bool> BookViewingAsync(ServiceReference1.BookingSubmissionData bookingData);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMovie", ReplyAction="http://tempuri.org/IService1/RegisterMovieResponse")]
         void RegisterMovie(ServiceReference1.Movie newMovie);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMovie", ReplyAction="http://tempuri.org/IService1/RegisterMovieResponse")]
         System.Threading.Tasks.Task RegisterMovieAsync(ServiceReference1.Movie newMovie);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterViewing", ReplyAction="http://tempuri.org/IService1/RegisterViewingResponse")]
+        void RegisterViewing(ServiceReference1.Viewing newViewing);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterViewing", ReplyAction="http://tempuri.org/IService1/RegisterViewingResponse")]
+        System.Threading.Tasks.Task RegisterViewingAsync(ServiceReference1.Viewing newViewing);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCustomers", ReplyAction="http://tempuri.org/IService1/GetCustomersResponse")]
         ServiceReference1.CustomerData[] GetCustomers();
@@ -1057,6 +1380,26 @@ namespace ServiceReference1
             return base.Channel.UpdateCustomerMailAsync(customer);
         }
         
+        public ServiceReference1.BookingData[] GetCustomersBookings(int customerId)
+        {
+            return base.Channel.GetCustomersBookings(customerId);
+        }
+        
+        public System.Threading.Tasks.Task<ServiceReference1.BookingData[]> GetCustomersBookingsAsync(int customerId)
+        {
+            return base.Channel.GetCustomersBookingsAsync(customerId);
+        }
+        
+        public bool BookViewing(ServiceReference1.BookingSubmissionData bookingData)
+        {
+            return base.Channel.BookViewing(bookingData);
+        }
+        
+        public System.Threading.Tasks.Task<bool> BookViewingAsync(ServiceReference1.BookingSubmissionData bookingData)
+        {
+            return base.Channel.BookViewingAsync(bookingData);
+        }
+        
         public void RegisterMovie(ServiceReference1.Movie newMovie)
         {
             base.Channel.RegisterMovie(newMovie);
@@ -1065,6 +1408,16 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task RegisterMovieAsync(ServiceReference1.Movie newMovie)
         {
             return base.Channel.RegisterMovieAsync(newMovie);
+        }
+        
+        public void RegisterViewing(ServiceReference1.Viewing newViewing)
+        {
+            base.Channel.RegisterViewing(newViewing);
+        }
+        
+        public System.Threading.Tasks.Task RegisterViewingAsync(ServiceReference1.Viewing newViewing)
+        {
+            return base.Channel.RegisterViewingAsync(newViewing);
         }
         
         public ServiceReference1.CustomerData[] GetCustomers()
