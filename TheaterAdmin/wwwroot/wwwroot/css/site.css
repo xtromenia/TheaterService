@@ -1,0 +1,203 @@
+﻿:root {
+    --colorbg: #131313;
+    --colorfg: #2F2F2F;
+    --colortext: white;
+    --coloraccent: #8E2525;
+    --coloraccentsecondary: #582121;
+    --coloraccenttertiary: #A52333;
+}
+body {
+    margin: 0;
+    padding-top: 60px;
+    background-color: var(--colorbg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--coloraccent);
+    z-index: 10;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+h1 {
+    color: white
+}
+
+h2 {
+    color: var(--coloraccent);
+}
+
+h3 {
+    color: white
+}
+
+/*Admin Login*/
+
+#container-login {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+}
+
+#login-form{
+    width: 500px;
+    height: 250px;
+    font-size: large;
+}
+
+
+#login-form input[type=submit] {
+    background-color: var(--coloraccent);
+    color: white;
+    width: 250px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#login-form input[type=text], input[type=password] {
+    width: 250px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#login-form label{
+    display: block;
+}
+
+#login-error{
+    padding: 0;
+    margin: 0;
+}
+
+/*Admin Menu*/
+.menu-container {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+#menu {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+    margin-bottom: 200px;
+}
+
+.menu-button {
+    width: 80%;
+    padding: 15px;
+    background: #8E2525;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.menu-button:hover {
+    background-color: var(--coloraccenttertiary);
+}
+
+
+.container {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+}
+
+.container-form {
+    width: 500px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+th, td, tr, table {
+    border: 2px solid var(--colorbg);
+    padding: 3px;
+    border-collapse: collapse;
+    color: white;
+}
+
+table {
+    width: 900px;
+    margin: 0 auto;
+    background-color: var(--coloraccent);
+    border-radius: 10px;
+}
+
+td a {
+    color: white;
+    font-weight: bold;
+}
+
+/*Register Viewing & Movie*/
+
+#viewing-form > *{
+    margin: 0 auto;
+    display: block;
+}
+
+#viewing-form label{
+    font-size: 20px;
+}
+
+#viewing-form select, input {
+    background-color: var(--colorfg);
+    padding: 5px 0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+}
+
+#viewing-form select option {
+    background-color: var(--colorfg);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+#viewing-form input[type=submit] {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--coloraccent);
+    cursor: pointer;
+}
+
+#viewing-form input[type=submit]:hover {
+    background-color: var(--coloraccenttertiary);
+}

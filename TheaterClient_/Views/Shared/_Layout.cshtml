@@ -4,13 +4,50 @@
     <meta charset="utf-8" />
     <title>Theater Client</title>
     <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet2.css" rel="stylesheet" />
 </head>
 <body>
     <header>
+        <h1><a href="/Home/">Cinema</a></h1>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a class="button" href="/User/Index">@User.Identity.Name</a>
+            <a class="button" href="/Authentication/Logout">Log Out</a>
+        }
+        else
+        {
+            <a class="button" href="javascript:void(0)" onclick="toggleLogin('login')">Login</a>
+            <a class="button" href="javascript:void(0)" onclick="toggleLogin('register')">Register</a>
+        }
     </header>
-    <div>
-        @RenderBody()
-    </div>
+    <section id="login" class="login hidden">
+        <a href="javascript:void(0)" onclick="toggleLogin('login')"></a>
+        <form action="/Authentication/Login" method="post" enctype="multipart/form-data">
+            <h2>Log In</h2>
+            <input type="text" name="email" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password" />
+            <input type="submit" name="submit" value="Log In" />
+        </form>
+    </section>
+    <section id="register" class="login hidden">
+        <a href="javascript:void(0)" onclick="toggleLogin('register')"></a>
+        <form action="/Authentication/Register" method="post" enctype="multipart/form-data">
+            <h2>Register</h2>
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="text" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required />
+            <input type="submit" name="submit" value="Register" />
+        </form>
+    </section>
+    
+    @RenderBody()
+    
+    <footer>
+        © 2022 🎦
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/script.js"></script>
 </body>
 </html>
 

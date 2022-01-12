@@ -1,0 +1,43 @@
+﻿@model List<ServiceReference1.BookingData>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Booking History";
+}
+
+@Html.Partial("_Menu");
+
+
+<div class="profile-container">
+    <h1>Booking History</h1>
+    <div class="booking-container">
+        <table id="booking-table">
+            @foreach (ServiceReference1.BookingData booking in Model)
+            {
+                <tr class="booking-row">
+                    <td class="booking-data">
+                        @Html.DisplayFor(m => booking.Id)
+                    </td>
+
+                    <td class="booking-data">
+                        @Html.DisplayFor(m => booking.Viewing.Date)
+                    </td>
+
+                    <td class="booking-data">
+                        @Html.DisplayFor(m => booking.Viewing.Movie.Title)
+                    </td>
+
+                    <td class="booking-data">
+                        @Html.DisplayFor(m => booking.Viewing.TheaterName)
+                    </td>
+
+                    @foreach (int seatNumber in booking.Seats)
+                    {
+                        <td class="booking-data">@seatNumber</td>
+                    }
+
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

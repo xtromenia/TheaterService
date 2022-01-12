@@ -1,0 +1,29 @@
+﻿@model ServiceReference1.CustomerData
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+@Html.Partial("_Menu")
+
+<div class="profile-container">
+
+    <h1>@Html.DisplayFor(m => m.Name)</h1>
+
+    <div class="container-form">
+        @using (Html.BeginForm("UpdateMail", "User"))
+        {
+            <label>New mail: </label>
+            @Html.EditorFor(m => m.Email);
+            <input value="Update Email" type="submit" />
+        }
+
+        @using (Html.BeginForm("UpdatePassword", "User"))
+        {
+            <label>New Password: </label>
+            @Html.PasswordFor(m => m.Password)
+            <input value="Update Password" type="submit" />
+        }
+    </div>
+</div>
+

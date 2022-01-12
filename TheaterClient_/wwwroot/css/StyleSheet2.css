@@ -1,0 +1,160 @@
+﻿:root {
+    --colorbg: #131313;
+    --colorfg: #2F2F2F;
+    --colortext: white;
+    --coloraccent: #8E2525;
+    --coloraccentsecondary: #582121;
+    --coloraccenttertiary: #A52333;
+    --coloraccenttruls: #801926;
+}
+
+.menu-container {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+#menu {
+    justify-content: center;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    padding: 10px;
+    margin-bottom: 200px;
+}
+
+.menu-button {
+    width: 300px;
+    padding: 15px;
+    background: var(--coloraccent);
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.profile-container{
+    text-align: center;
+    color: white;
+    margin: auto;
+    width:80%;
+}
+.menu-button:hover {
+    background-color: var(--coloraccenttertiary);
+}
+
+/*Formulär */
+.profile-container > * {
+    margin: 0 auto;
+    display: block;
+}
+
+.profile-container label {
+    font-size: 20px;
+}
+
+.container-form select, .container-form input {
+    background-color: var(--colorfg);
+    padding: 5px 0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.container-form select option {
+    background-color: var(--colorfg);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.container-form input[type=submit] {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--coloraccent);
+    cursor: pointer;
+}
+
+.container-form input[type=submit]:hover {
+    background-color: var(--coloraccenttertiary);
+}
+
+.container-form form {
+    margin: 40px 0;
+}
+
+.container-form {
+    width: 500px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+/*Media query for my info*/
+
+@media (max-width: 1000px) {
+    .container-form {
+        width:95%;
+    }
+
+    #menu {
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .menu-button {
+        width: 100%;
+        margin: 20px 0;
+        display: block;
+    }
+}
+.profile-container h1 {
+    margin-bottom: 50px;
+}
+
+/*Bookings*/
+
+#booking-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.booking-data{
+    border: solid 1px black;
+}
+
+.booking-row:nth-child(even) {
+    background-color: var(--coloraccenttruls);
+}
+
+.booking-row:nth-child(odd) {
+    background-color: var(--coloraccenttertiary);
+}
+
+/* Cheat to get rounded border on table*/
+td:first-child,
+th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+td:last-child,
+th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.booking-row, .booking-data {
+    padding: 10px;
+}
+
+.booking-container {
+    margin: 0 auto;
+    width: 95%;
+    text-align:center;
+}

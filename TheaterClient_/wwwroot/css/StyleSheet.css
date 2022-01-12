@@ -1,5 +1,4 @@
-﻿
-* {
+﻿* {
     box-sizing: border-box;
 }
 
@@ -16,6 +15,7 @@ body {
     margin: 0;
     padding-top: 60px;
     background-color: var(--colorbg);
+    font-family: sans-serif;
 }
 
 header {
@@ -27,28 +27,518 @@ header {
     background-color: var(--coloraccent);
     z-index: 10;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 10px 60px;
 }
+header h1 {
+    float: left;
+    margin: 0;
+    font-size: 24px;
+    padding: 6px;
+}
+
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+header .button {
+    float: right;
+    height: 40px;
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    transition: background-color .5s;
+}
+
+header .button:hover {
+    background-color: rgb(160 160 160);
+}
+
+header .button:nth-child(2n+1) {
+    background-color: transparent;
+    color: white;
+}
+
+header .button:nth-child(2n+1):hover {
+    background-color: var(--coloraccentsecondary);
+}
+
+section.login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 11;
+}
+
+section.login.hidden {
+    display: none;
+    z-index: -10;
+}
+
+section.login a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+section.login form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px 40px 40px;
+    background-color: var(--colorbg);
+    border-radius: 8px;
+    z-index: 12;
+}
+
+section.login form h2 {
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+    color: white;
+}
+
+section.login form input {
+    width: 100%;
+    height: 50px;
+    padding: 13px 20px;
+    background-color: var(--colorfg);
+    border-radius: 6px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: none !important;
+    margin-top: 20px;
+}
+
+section.login form input::placeholder {
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.50);
+}
+
+section.login form input[type=submit] {
+    background-color: var(--coloraccent);
+    transition: background-color .5s, box-shadow .5s, transform .5s;
+    cursor: pointer;
+}
+
+section.login form input[type=submit]:hover, section.login form input[type=submit]:focus {
+    background-color: var(--coloraccenttertiary);
+    box-shadow: 0px 4px 6px rgba(0,0,0,1);
+    transform: translateY(-4px);
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+
 
 section#jumbo {
     width: 100%;
     padding-top: 25%;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-image: linear-gradient(to top right, var(--coloraccentsecondary), var(--coloraccenttertiary));
     overflow: hidden;
 }
 
+section#jumbo a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 #movielist {
-    display: flex; /*Möjligtvis använda grid istället.*/
+    width: 100%;
+    max-width: 1920px;
+    margin: 40px auto 40px;
+    padding: 0 30px;
+}
+
+#movielist::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#movielist nav {
+    width: 100%;
+    overflow: auto;
+    padding: 0 28.33px;
+}
+
+#movielist select {
+    min-width: 300px;
+    padding: 10px 15px;
+    background-color: var(--colorfg);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    float: left;
+}
+
+#movielist select option {
+    background-color: var(--colorfg);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
+    color: white;
 }
 
 .movie {
-    width: 220px;
-    height: 310px;
+    width: calc((100% - 360px + (30px * 2)) / 5); /* 220px at 1440px parent width (15.277%). 28.33px * 2 is accounting for parent padding */
     border-radius: 8px;
-    background: linear-gradient(206.73deg, #A52333 0%, #582121 100%);
+    float: left;
+    margin: 40px 30px;
+    transition: background-color .5s, transform .5s, box-shadow .5s;
 }
 
-.movie-banner {
-    max-height: 100%;
-    max-width: 100%;
+@media only screen and (max-width: 800px) {
+    #movielist {
+        margin: 20px auto 40px;
+        padding: 0 20px;
+    }
+
+    #movielist nav {
+        padding: 0;
+    }
+
+    #movielist select {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .movie {
+        width: 100%;
+        margin: 20px auto;
+    }
+}
+
+.movie:hover, .movie:focus, .movie:focus-within {
+    background-color: var(--colorfg);
+    transform: scale(1.05) translateY(-2.5%);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.5);
+}
+
+.movie .bannercontainer {
+    width: 100%;
+    padding-top: 140.9%; /* 310px height / 220px width = 1.409 approx */
+    border-radius: 8px;
+    background: linear-gradient(to top right, var(--coloraccentsecondary), var(--coloraccenttertiary));
+    position: relative;
+    overflow: hidden;
+    transition: border-radius .5s;
+}
+
+.movie .bannercontainer img::before {
+    color: transparent;
+}
+
+.movie:hover .bannercontainer, .movie:focus .bannercontainer, .movie:focus-within .bannercontainer {
+    border-radius: 8px 8px 0px 0px;
+}
+
+.movie .bannercontainer img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie .titlecontainer {
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+
+.movie .titlecontainer h3 {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: normal;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0 12.5px;
+    text-align: center;
+}
+
+
+
+
+
+.container {
+    width: 80%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 450px 1fr 450px;
+    padding: 10px;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1440px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.grid-container#moviecontainer {
+    color: white;
+}
+
+.grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.grid-item img {
+    border-radius: 8px;
+}
+
+.grid-item#moviedetails {
+    grid-column: 2 / span 2;
+}
+
+.grid-item#moviedetails h2 {
+    margin: 0;
+    font-size: 52px;
+}
+
+.grid-item#moviedetails a {
+    color: var(--coloraccent);
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.grid-item#moviedetails p {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.grid-item#moviedetails p#desc {
+    font-size: 22px;
+}
+
+
+.grid-item#viewings {
+    grid-column: 2 / span 1;
+}
+
+.grid-item#viewings article {
+    width: 100%;
+    height: 90px;
+    background-color: var(--colorfg);
+    border-radius: 8px;
+    margin-top: 30px;
+    padding: 20px 30px;
+    display: grid;
+    grid-template-columns: 1fr 125px;
+    grid-column-gap: 30px;
+    grid-template-rows: 50px;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.grid-item#viewings article.full {
+    background-color: var(--colorbg);
+    color: var(--colorfg);
+}
+
+.grid-item#viewings article section {
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 150px 1fr 150px;
+    grid-column-gap: 20px;
+}
+
+.grid-item#viewings article section h3, .grid-item#viewings article section h4, .grid-item#viewings article section p {
+    margin: 0;
+    font-size: 25px;
+}
+
+.grid-item#viewings article section p {
+    text-align: right;
+}
+
+.grid-item#viewings article a {
+    background-color: var(--coloraccent);
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    transition: background-color .5s, transform .5s, box-shadow .5s;
+}
+
+.grid-item#viewings article a:hover, .grid-item#viewings article a:focus {
+    background-color: var(--coloraccenttertiary);
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+}
+
+
+
+.grid-item#viewings .formcontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+}
+
+.grid-item#viewings .formcontainer.hidden {
+    display: none;
+    z-index: -1;
+}
+
+.grid-item#viewings .formcontainer a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    cursor: default;
+}
+
+.grid-item#viewings .formcontainer form {
+    max-width: 75%;
+    min-width: 750px;
+    padding: 20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--colorbg);
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px black;
+    z-index: 12;
+    color: white;
+    text-align: center;
+}
+
+.grid-item#viewings .formcontainer form h5 {
+    font-size: 26px;
+    margin: 0;
+    text-align: center;
+}
+
+.grid-item#viewings .formcontainer form .theater {
+    padding: 20px;
+    background-color: var(--colorfg);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.grid-item#viewings .formcontainer form .moviescreen {
+    width: 50%;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.grid-item#viewings .formcontainer form .row {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.grid-item#viewings .formcontainer form .row label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.grid-item#viewings .formcontainer form .row label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.grid-item#viewings .formcontainer form .row label span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 6px;
+    transition: background-color .5s;
+}
+
+.grid-item#viewings .formcontainer form .row label:hover input ~ span, .grid-item#viewings .formcontainer form .row label:focus-within input ~ span {
+    background-color: rgb(160, 160, 160);
+}
+
+.grid-item#viewings .formcontainer form .row label input:checked ~ span {
+    background-color: var(--coloraccent);
+}
+
+.grid-item#viewings .formcontainer form .row label input:disabled ~ span {
+    background-color: var(--colorbg);
+    cursor: default;
+}
+
+.grid-item#viewings .formcontainer form input[type=submit] {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--coloraccent);
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color .5s, transform .5s, box-shadow .5s;
+}
+
+.grid-item#viewings .formcontainer form input[type=submit]:hover, .grid-item#viewings .formcontainer form input[type=submit]:focus {
+    background-color: var(--coloraccenttertiary);
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 6px black;
 }

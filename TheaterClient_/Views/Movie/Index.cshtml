@@ -3,9 +3,73 @@
     Layout = "_Layout";
 }
 
-<h1>@Html.DisplayFor(m => m.Title)</h1>
-<img src="@Html.DisplayFor(m => m.ImgPath)"/>
-<h3>@Html.DisplayFor(m => m.Runtime)</h3>
-<h3>@Html.DisplayFor(m => m.Genre)</h3>
-<p>@Html.DisplayFor(m => m.Description)</p>
+<div class="grid-container" id="moviecontainer">
 
+    <div class="grid-item"><img src="@Html.DisplayFor(m => m.ImgPath)" style="width:100%" /></div>
+    <div class="grid-item" id="moviedetails">
+        <h2>@Html.DisplayFor(m => m.Title)</h2>
+        <p>@Html.DisplayFor(m => m.Runtime) min<a href="/Home/?genre=@Html.DisplayFor(m => m.Genre)">@Html.DisplayFor(m => m.Genre)</a></p>
+        <p id="desc" style="color:white;">@Html.DisplayFor(m => m.Description)</p>
+    </div>
+    <div class="grid-item" id="viewings">
+        @ViewBag.Succeeded
+        @foreach (var viewing in Model.Viewing)
+        { 
+            <article>
+                <section>
+                    <h3>@viewing.Date.ToString("dd'/'MM HH:mm")</h3><h4>@viewing.Theater</h4><p>@viewing.AvailableSeats / @viewing.NSeats <i class="fas fa-couch"></i></p>
+                </section>
+                @if (viewing.AvailableSeats > 0 && User.Identity.IsAuthenticated)
+                {
+                    <a href="javascript:void(0)" onclick="toggleBooking(@viewing.Id)">
+                        Book
+                    </a>
+                }
+                else if (viewing.AvailableSeats > 0)
+                {
+                    <a href="javascript:void(0)" onclick="toggleLogin('login')">
+                        Book
+                    </a>
+                }
+            </article>
+            <div id="@viewing.Id" class="formcontainer hidden">
+                <a href="javascript:void(0)" onclick="toggleBooking(@viewing.Id)"></a>
+                @if (viewing.AvailableSeats > 0 && User.Identity.IsAuthenticated)
+                {
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <h5>@viewing.Date.ToString("dd'/'MM HH:mm") - @viewing.Theater</h5>
+                        <input type="hidden" name="viewingid" value="@viewing.Id" />
+                        <div class="theater">
+                            <div class="moviescreen"></div>
+                            @for (int i = 0; i < viewing.Seats.Count(); i++)
+                            {
+                                <div class="row">
+                                    @for (int j = 0; j < viewing.Seats.ElementAt(i).Count(); j++)
+                                    {
+                                        <input type="hidden" name="seats.Index" value="@viewing.Seats.ElementAt(i).ElementAt(j).Id" />
+                                        <label>
+                                            @viewing.Seats.ElementAt(i).ElementAt(j).Number
+                                        @if (viewing.Seats.ElementAt(i).ElementAt(j).IsBooked)
+                                        {
+                                            <input type="checkbox" name="seats[@viewing.Seats.ElementAt(i).ElementAt(j).Id].Checked" disabled />
+                                        }
+                                        else
+                                        {
+                                            <input type="checkbox" name="seats[@viewing.Seats.ElementAt(i).ElementAt(j).Id].Checked" />
+                                        }
+                                        <span></span>
+                                    </label>
+                                    <input type="hidden" name="seats[@viewing.Seats.ElementAt(i).ElementAt(j).Id].Id" value="@viewing.Seats.ElementAt(i).ElementAt(j).Id" />
+                                    <input type="hidden" name="seats[@viewing.Seats.ElementAt(i).ElementAt(j).Id].Number" value="@viewing.Seats.ElementAt(i).ElementAt(j).Number" />
+                                }
+                                </div>
+                            }
+                        </div>
+                        <input type="submit" name="submit" value="Book" />
+                    </form>
+                }
+            </div>
+        }
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/4fd0e6a5a3.js" crossorigin="anonymous"></script>

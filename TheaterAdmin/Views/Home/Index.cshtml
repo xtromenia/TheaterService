@@ -1,0 +1,19 @@
+﻿@model Admin
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div id="container-login">
+    <h1>Admin Login</h1>
+
+    @using  (Html.BeginForm(FormMethod.Post, new { @id = "login-form" })) 
+    {
+    <label for="username">Username</label>
+    @Html.EditorFor(m => m.Username, new { htmlAttributes = new { @class = "form-control", @data_val = "true", @required = "required" } });
+    <label for="password">Password</label>
+    @Html.PasswordFor(m => m.Password, new { @required = "required" });
+    <br />
+    <input type="submit" value="Login" />
+    <p id = "login-error" > @ViewBag.LoginError </p>
+    }
+</div>
