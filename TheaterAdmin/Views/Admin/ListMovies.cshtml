@@ -18,7 +18,10 @@
             <tr>
                 <td>@movie.Id</td>
                 <td>@movie.Title</td>
-                <td>@Html.ActionLink("Edit", "#") <a href="/Admin/RemoveMovie?id=@movie.Id">Remove</a></td>
+                <td>
+                <a href="/Admin/EditMovie?id=@movie.Id" class="movie-button">Edit</a>
+                <a href="/Admin/RemoveMovie?id=@movie.Id" class="movie-button">Remove</a>
+                </td>
             </tr>
         }
     </table>

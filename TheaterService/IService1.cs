@@ -49,6 +49,9 @@ namespace TheaterService
         void RegisterMovie(Movie newMovie);
 
         [OperationContract]
+        void UpdateMovie(MovieData updatedInfo);
+
+        [OperationContract]
         void RemoveMovie(int id);
 
         [OperationContract]

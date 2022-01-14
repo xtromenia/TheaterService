@@ -213,6 +213,20 @@ namespace TheaterService
             }
         }
 
+        public void UpdateMovie(MovieData updatedInfo)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Movie movieInDb = db.Movie.Find(updatedInfo.Id);
+                movieInDb.Title = updatedInfo.Title;
+                movieInDb.Genre = updatedInfo.Genre;
+                movieInDb.Description = updatedInfo.Description;
+                movieInDb.ImgPath = updatedInfo.ImgPath;
+                movieInDb.Runtime = updatedInfo.Runtime;
+                db.SaveChanges();
+            }
+        }
+
         public void RemoveMovie(int id)
         {
             using (DataModel db = new DataModel())

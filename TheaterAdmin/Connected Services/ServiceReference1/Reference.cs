@@ -1231,6 +1231,12 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMovie", ReplyAction="http://tempuri.org/IService1/RegisterMovieResponse")]
         System.Threading.Tasks.Task RegisterMovieAsync(ServiceReference1.Movie newMovie);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateMovie", ReplyAction="http://tempuri.org/IService1/UpdateMovieResponse")]
+        void UpdateMovie(ServiceReference1.MovieData updatedInfo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateMovie", ReplyAction="http://tempuri.org/IService1/UpdateMovieResponse")]
+        System.Threading.Tasks.Task UpdateMovieAsync(ServiceReference1.MovieData updatedInfo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RemoveMovie", ReplyAction="http://tempuri.org/IService1/RemoveMovieResponse")]
         void RemoveMovie(int id);
         
@@ -1420,6 +1426,16 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task RegisterMovieAsync(ServiceReference1.Movie newMovie)
         {
             return base.Channel.RegisterMovieAsync(newMovie);
+        }
+        
+        public void UpdateMovie(ServiceReference1.MovieData updatedInfo)
+        {
+            base.Channel.UpdateMovie(updatedInfo);
+        }
+        
+        public System.Threading.Tasks.Task UpdateMovieAsync(ServiceReference1.MovieData updatedInfo)
+        {
+            return base.Channel.UpdateMovieAsync(updatedInfo);
         }
         
         public void RemoveMovie(int id)
