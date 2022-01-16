@@ -23,7 +23,7 @@
             <td>@customer.Id</td>
             <td>@customer.Email</td>
             <td>@customer.Name</td>
-            <td>@Html.ActionLink("Edit", "ListCustomers") @Html.ActionLink("Delete", "ListCustomers")</td>
+            <td>@Html.ActionLink("Edit", "ListCustomers") <a href="/Admin/RemoveCustomer?id=@customer.Id">Remove</a></td>
         </tr>
         }
     </table>
