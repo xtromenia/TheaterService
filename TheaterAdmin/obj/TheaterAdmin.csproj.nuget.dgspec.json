@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj": {}
+    "C:\\Users\\super\\source\\repos\\projekt\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj": {
+    "C:\\Users\\super\\source\\repos\\projekt\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj",
+        "projectUniqueName": "C:\\Users\\super\\source\\repos\\projekt\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
         "projectName": "TheaterAdmin",
-        "projectPath": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\TheaterAdmin.csproj",
-        "packagesPath": "C:\\Users\\josef\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\josef\\Documents\\HV\\År 2\\[4] E-tjänster och XML\\Grupparbete\\TheaterAdmin\\obj\\",
+        "projectPath": "C:\\Users\\super\\source\\repos\\projekt\\TheaterService\\TheaterAdmin\\TheaterAdmin.csproj",
+        "packagesPath": "C:\\Users\\super\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\super\\source\\repos\\projekt\\TheaterService\\TheaterAdmin\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\josef\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\super\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

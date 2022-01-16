@@ -29,7 +29,6 @@ namespace TheaterAdmin.Controllers
             ViewBag.Status = "Movie Registered";
             return View();
         }
-
         public IActionResult RegisterViewing()
         {
             RegisterViewingModel registerViewingModel = new RegisterViewingModel();
@@ -58,6 +57,37 @@ namespace TheaterAdmin.Controllers
         {
             List<CustomerData> customers = service.GetCustomers().ToList();
             return View(customers);
+        }
+
+        public IActionResult RemoveCustomer(int id)
+        {
+            service.RemoveCustomer(id);
+            return RedirectToAction("ListCustomers");
+        }
+
+        public IActionResult ListMovies()
+        {
+            List<MovieData> movies = service.GetMovies().ToList();
+            return View(movies);
+        }
+        public IActionResult RemoveMovie(int id)
+        {
+            service.RemoveMovie(id);
+            return RedirectToAction("ListMovies");
+        }
+
+        public IActionResult EditMovie(int id)
+        {
+            MovieData movie = service.GetMovie(id);
+            return View(movie);
+        }
+
+        [HttpPost]
+        public IActionResult EditMovie(MovieData movie)
+        {
+            service.UpdateMovie(movie);
+            ViewBag.Status = "Movie Updated";
+            return View(movie);
         }
     }
 }

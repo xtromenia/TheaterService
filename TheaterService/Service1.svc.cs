@@ -213,6 +213,57 @@ namespace TheaterService
             }
         }
 
+        public void UpdateMovie(MovieData updatedInfo)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Movie movieInDb = db.Movie.Find(updatedInfo.Id);
+                movieInDb.Title = updatedInfo.Title;
+                movieInDb.Genre = updatedInfo.Genre;
+                movieInDb.Description = updatedInfo.Description;
+                movieInDb.ImgPath = updatedInfo.ImgPath;
+                movieInDb.Runtime = updatedInfo.Runtime;
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveMovie(int id)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Movie movieInDb = db.Movie.Find(id);
+                RemoveViewing(movieInDb);
+
+                movieInDb = db.Movie.Find(id);
+                db.Movie.Remove(movieInDb);
+
+                db.SaveChanges();
+            }
+        }
+
+        //Privat funktion som tar bort visningar av en film, behövs göras innan man kan ta bort filmen ur databas.
+        //För att man skall kunna ta bort visningar och filmer där användare har bokat sig in på behöver man först ta bort deras bokningar.
+        //^ detta är ej implementerat i dagsläget.
+        //Jag vet inte riktigt vad jag håller på med därför sparar jag mina changes så ofta haha.
+        private void RemoveViewing(Movie movieInDb)
+        {
+            using (DataModel db = new DataModel())
+            {
+                foreach (Viewing viewing in movieInDb.Viewing)
+                {
+                    Viewing viewingInDb = db.Viewing.Find(viewing.Id);
+                    foreach (Booking booking in viewingInDb.Booking)
+                    {
+                        Booking bookingInDb = db.Booking.Find(booking.Id);
+                        db.Booking.Remove(bookingInDb);
+                        db.SaveChanges();
+                    }
+                    db.SaveChanges();
+                }
+                db.SaveChanges();
+            }
+        }
+
         public List<CustomerData> GetCustomers()
         {
             List<CustomerData> customers = new List<CustomerData>();
@@ -229,6 +280,37 @@ namespace TheaterService
                 }
 
                 return customers;
+            }
+        }
+
+
+        public void RemoveCustomer(int id)
+        {
+            using (DataModel db = new DataModel())
+            {
+                Customer customer = db.Customer.Find(id);
+
+                RemoveBookings(customer);
+
+                db.Customer.Remove(customer);
+
+                db.SaveChanges();
+            }
+        }
+
+        private void RemoveBookings(Customer customer)
+        {
+            using (DataModel db = new DataModel())
+            {
+                List<BookingData> bookings = GetCustomersBookings(customer.Id);
+
+                foreach(BookingData booking in bookings)
+                {
+                    Booking bookingInDb = db.Booking.Find(booking.Id);
+                    db.Booking.Remove(bookingInDb);
+                }
+
+                db.SaveChanges();
             }
         }
 

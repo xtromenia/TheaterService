@@ -107,13 +107,13 @@ h3 {
 #menu {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 80px;
 }
 
 .menu-button {
-    width: 80%;
+    width: 70%;
     padding: 15px;
     background: #8E2525;
     border-radius: 6px;
@@ -200,4 +200,21 @@ td a {
 
 #viewing-form input[type=submit]:hover {
     background-color: var(--coloraccenttertiary);
+}
+
+@media (max-width: 1000px) {
+    .container-form {
+        width: 95%;
+    }
+
+    #menu {
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .menu-button {
+        width: 100%;
+        margin: 20px 0;
+        display: block;
+    }
 }

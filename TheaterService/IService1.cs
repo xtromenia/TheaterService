@@ -37,8 +37,6 @@ namespace TheaterService
         [OperationContract]
         void UpdateCustomerMail(CustomerData customer);
 
-
-
         [OperationContract]
         List<BookingData> GetCustomersBookings(int customerId);
 
@@ -51,10 +49,19 @@ namespace TheaterService
         void RegisterMovie(Movie newMovie);
 
         [OperationContract]
+        void UpdateMovie(MovieData updatedInfo);
+
+        [OperationContract]
+        void RemoveMovie(int id);
+
+        [OperationContract]
         void RegisterViewing(Viewing newViewing);
 
         [OperationContract]
         List<CustomerData> GetCustomers();
+
+        [OperationContract]
+        void RemoveCustomer(int id);
 
         [OperationContract]
         List<TheaterData> GetTheaters();
