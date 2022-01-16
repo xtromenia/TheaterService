@@ -109,7 +109,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 80px;
 }
 
 .menu-button {
